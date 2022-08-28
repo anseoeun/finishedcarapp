@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("~@/assets/fonts/Montserrat-Bold.woff") format("woff"), url("~@/assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("~@/assets/fonts/Montserrat-SemiBold.woff") format("woff"), url("~@/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("~@/assets/fonts/Montserrat-Medium.woff") format("woff"), url("~@/assets/fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("~@/assets/fonts/Montserrat-Regular.woff") format("woff"), url("~@/assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ========================================
+  layout
+=========================================== */
+body{background:#F5F6F9;}
+
+.header{background:#fff;}
+.header .i-logo-header{width:6.8rem;height:1.4rem;background:url('~@/assets/images/bmw/logo-header.png') no-repeat 0 0;}
+
+/* ========================================
+  common content
+=========================================== */
+
+/* icon */
+.i-check.on svg path {stroke:#2A64AB}
+
+
+/* ========================================
+  content
+=========================================== */
+
+/* splash */
+.splash-wrap{background:url('~@/assets/images/bmw/bg-splash.jpg') no-repeat 50% 50%;background-attachment: fixed;}
+.splash-wrap .logo{position:absolute;top:12rem;left:4rem;width:21.6rem;height:4rem;background:url('~@/assets/images/bmw/logo-white.png') no-repeat 0 0;}
+
+
+/* login */
+.login-wrap{position:relative; width:100%; height:100vh; background:var(--path-splash);background-size:cover;overflow:auto;}
+.login-wrap .logo{margin-left:4rem;margin-bottom:7rem;width:21.6rem;height:4rem;background:var(--path-logo-splash);background-size:auto 100%;}
+.login-wrap .min-fix{margin-top:12rem;min-height:40rem;}
+.login-wrap .login-box{width:29.5rem;margin:0 auto;padding:3rem 1.6rem;background: rgba(255, 255, 255, 0.8);border-radius: 0.8rem;}
+.login-wrap .login-box > ul li ~ li{margin-top:0.8rem;}
+.login-wrap .login-box > ul li .inp{padding-left:5.4rem;}
+.login-wrap .login-box > ul li .inp.id{background:#fff url('~@/assets/images/bmw/ico-login-id.png') no-repeat 2.55rem 50%;background-size:1.725rem auto;}
+.login-wrap .login-box > ul li .inp.pw{background:#fff url('~@/assets/images/bmw/ico-login-pw.png') no-repeat 2.55rem 50%;background-size:1.725rem auto;}
+.login-wrap .login-box > ul li .inp input{height:4rem;font-size:1.4rem; color:#7E859A;border:none;}
+.login-wrap .login-box .btn-box{margin-top:3.2rem;}
+.login-wrap .login-box .login-menu{margin-top:1.7rem;}
+.login-wrap .login-box .login-menu ul{display:flex;flex-direction:row;align-items:center;justify-content: center;}
+.login-wrap .login-box .login-menu ul li{position:relative;font-size:1.1rem; color:#7E859A;display:inline-block;}
+.login-wrap .login-box .login-menu ul li ~ li{padding-left:1.5rem;margin-left:1.4rem;}
+.login-wrap .login-box .login-menu ul li ~ li:after{content:'';display:block;width:1px;height:1rem;background:#7E859A;position:absolute;top:40%;left:0;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
+.login-wrap .login-box .login-menu ul li button,
+.login-wrap .login-box .login-menu ul li a{display:inline-block;width:auto;}
+.login-wrap .login-box .login-menu ul li span{display:inline-block;position:relative;}
+.login-wrap .login-box .login-menu ul li span ~ span{padding-left:0.8rem;margin-left:0.7rem;}
+.login-wrap .login-box .login-menu ul li span ~ span:after{content:'';display:block;background:#7E859A;height:0.2rem;width:0.2rem;border-radius:1.1rem;position:absolute;top:40%;left:0;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
+
+/* join */
+.join-rule-list-wrap{min-height:100%;padding:6.4rem 4rem 10rem;background:#fff url('~@/assets/images/bmw/bg-join.jpg') no-repeat 50% 50%;background-size:cover;background-attachment: fixed;}
+.join-rule-list-wrap .logo{width:21.6rem;height:4rem;background:url('~@/assets/images/bmw/logo.png') no-repeat 0 0;background-size:auto 100%;}
+.join-rule-list-wrap .text{margin-top:3.6rem;}
+.join-rule-list-wrap .text strong{display:block;font-weight:700;font-size:2rem; color:#000;}
+.join-rule-list-wrap .text p{font-size:1.4rem;margin-top:0.8rem;}
+.join-rule-list-wrap .btn-wrap{margin-top:2.4rem;}
+
+.join-rule-list-wrap .grid-list-menu{background:#fff;border-radius: 0.8rem;overflow:hidden;margin-top:3.6rem;}
+.join-rule-list-wrap .grid-list-menu>.row{display:flex;flex-direction:row;align-items:center;height:4.9rem;padding:0 1rem 0 1.5rem;}
+.join-rule-list-wrap .grid-list-menu>.row .check,
+.join-rule-list-wrap .grid-list-menu>.row .check button{display:flex;flex-direction:row;align-items:center;height:3rem;}
+.join-rule-list-wrap .grid-list-menu>.row .check .icon-check{display:inline-flex;width:2.5rem;height:2.5rem;border-radius:2.5rem;justify-content:center;align-items:center;}
+.join-rule-list-wrap .grid-list-menu>.row .check .txt{margin-left:1rem;font-size:1.4rem;}
+.join-rule-list-wrap .grid-list-menu>.row .right{position:relative;margin-left:auto;}
+.join-rule-list-wrap .grid-list-menu>.row.total{font-size:1.6rem;font-weight:700;background:#f8fafb;}
+.join-rule-list-wrap .grid-list-menu>.row.total .check .icon-check{background:#7E859A;}
+.join-rule-list-wrap .grid-list-menu>.row.total .check .icon-check.on{background:#2A64AB;}
+.join-rule-list-wrap .grid-list-menu>.row.total .txt{ color:#000;}
+.join-rule-list-wrap .grid-list-menu>.row .bth-link{display:block;height:3rem;width:3rem;display:flex;flex-direction: column;justify-content:center;align-items:center;}
+
+
+/* cs-center */
+.cs-center-wrap{position:relative;height:100%;padding:2.4rem 4rem;background:url('~@/assets/images/bmw/bg-cscenter.jpg') no-repeat 50% 50%;background-size:cover;background-attachment: fixed;}
+.cs-center-wrap .cs-menu-list{margin-left:-2.75rem;}
+.cs-center-wrap .cs-menu-list:after{content:'';display:block;clear: both;}
+.cs-center-wrap .cs-menu-list li{float:left;margin-top:3.2rem;padding-left:2.75rem;width:33.3333%;}
+.cs-center-wrap .cs-menu-list li  .menu{width:8rem;height:9rem;background:#fff;border-radius:0.8rem;display:flex;flex-direction: column;justify-content:center;align-items:center;}
+.cs-center-wrap .cs-menu-list li .menu .icon i{display:block;width:5.4rem;height:5.4rem;}
+.cs-center-wrap .cs-menu-list li .menu .txt{font-size:1rem;font-weight:700; color:#000;margin-top:0.5rem;}
+.cs-center-wrap .i-cs-notice{background:url('~@/assets/images/bmw/ico-cs-notice.png') no-repeat 0 0;}
+.cs-center-wrap .i-cs-faq{background:url('~@/assets/images/bmw/ico-cs-faq.png') no-repeat 0 0;}
+.cs-center-wrap .i-cs-question{background:url('~@/assets/images/bmw/ico-cs-question.png') no-repeat 0 0;}
+.cs-center-wrap .i-cs-center{background:url('~@/assets/images/bmw/ico-cs-center.png') no-repeat 0 0;}
+.cs-center-wrap .i-cs-apps{background:url('~@/assets/images/bmw/ico-cs-apps.png') no-repeat 0 0;}
+
+/* board */
+.board-wrap{padding:2.4rem;}
+.board-wrap .categpru{margin-top:3.2rem;}
+.board-wrap .categpru .label{font-weight:700;font-size:1.4rem; color:#111F42;}
+.board-wrap .categpru .cate{display:inline-block;margin-left:1rem;height:2.8rem;padding:0 1rem; color:#fff;font-size:1.4rem;text-align:center;line-height:2.8rem;background:#7E859A;}
+.board-wrap .board-box{margin-top:2.4rem;}
+.board-wrap .btn-wrap{margin-top:1.6rem;}

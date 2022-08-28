@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/* ========================================
+  layout
+=========================================== */
+body{background:#F4F4F4;}
+
+.header .i-logo-header{width:10.6rem;height:1.4rem;background:url('~@/assets/images/benz/logo-header.png') no-repeat 0 0;}
+
+/* ========================================
+  content
+=========================================== */
+
+/* login */
+.login-wrap{position:relative; width:100%; height:100vh; background:var(--path-splash);background-size:cover;overflow:auto;}
+.login-wrap .logo{margin-left:4rem;margin-bottom:7rem;width:21.6rem;height:4rem;background:var(--path-logo-splash);background-size:auto 100%;}
+.login-wrap .min-fix{margin-top:12rem;min-height:40rem;}
+.login-wrap .login-box{width:29.5rem;margin:0 auto;padding:3rem 1.6rem;background: rgba(255, 255, 255, 0.8);border-radius: 0.8rem;}
+.login-wrap .login-box > ul li ~ li{margin-top:0.8rem;}
+.login-wrap .login-box > ul li .inp{padding-left:5.4rem;}
+.login-wrap .login-box > ul li .inp.id{background:#fff url('~@/assets/images/bmw/ico-login-id.png') no-repeat 2.55rem 50%;background-size:1.725rem auto;}
+.login-wrap .login-box > ul li .inp.pw{background:#fff url('~@/assets/images/bmw/ico-login-pw.png') no-repeat 2.55rem 50%;background-size:1.725rem auto;}
+.login-wrap .login-box > ul li .inp input{height:4rem;font-size:1.4rem; color:#7E859A;border:none;}
+.login-wrap .login-box .btn-box{margin-top:3.2rem;}
+.login-wrap .login-box .login-menu{margin-top:1.7rem;}
+.login-wrap .login-box .login-menu ul{display:flex;flex-direction:row;align-items:center;justify-content: center;}
+.login-wrap .login-box .login-menu ul li{position:relative;font-size:1.1rem; color:#7E859A;display:inline-block;}
+.login-wrap .login-box .login-menu ul li ~ li{padding-left:1.5rem;margin-left:1.4rem;}
+.login-wrap .login-box .login-menu ul li ~ li:after{content:'';display:block;width:1px;height:1rem;background:#7E859A;position:absolute;top:40%;left:0;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
+.login-wrap .login-box .login-menu ul li button,
+.login-wrap .login-box .login-menu ul li a{display:inline-block;width:auto;}
+.login-wrap .login-box .login-menu ul li span{display:inline-block;position:relative;}
+.login-wrap .login-box .login-menu ul li span ~ span{padding-left:0.8rem;margin-left:0.7rem;}
+.login-wrap .login-box .login-menu ul li span ~ span:after{content:'';display:block;background:#7E859A;height:0.2rem;width:0.2rem;border-radius:1.1rem;position:absolute;top:40%;left:0;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
+

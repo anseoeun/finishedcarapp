@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/* ========================================
+  layout
+=========================================== */
+body{background:#F4F4F4;}
+
+.header .i-logo-header{width:5.7rem;height:1.9rem;background:url('~@/assets/images/polestar/logo-header.png') no-repeat 0 0;}
+
+
+/* ========================================
+  common content
+=========================================== */
+
+/* tit-type */
+.tit-type1{font-size:2.3rem;color:#53565A;}
