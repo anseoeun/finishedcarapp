@@ -9,6 +9,7 @@
 </template>
 <script>
 import Layout from '@/layouts/Layout';
+// import "@/assets/css/style2.scss";
 
 export default {
     name: 'App',
@@ -30,11 +31,11 @@ export default {
 }
 </script>
 <style lang="scss">
-@import '~@/assets/css/media.scss';
-.skin-bmw{
-  $path: 'bmw';
-  @import '~@/assets/css/style2.scss';
-}
+// @import '~@/assets/css/media.scss';
+// .skin-bmw{
+//   $path: 'bmw';
+//   @import '~@/assets/css/style2.scss';
+// }
   
 </style>
 <!--<style>
