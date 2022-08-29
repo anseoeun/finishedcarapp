@@ -1,0 +1,24 @@
+@charset 'utf-8';
+
+@use "sass:map";
+@use "sass:meta";
+
+
+$bbb: var(--c-path);
+
+
+
+$aaa: var(--c-base);
+
+// @function getColors ($bbb) {
+//   @if($bbb == 'bmw'){
+//     @return 'bmw'; 
+//   }
+// }
+
+
+// @function setBg () {
+//   @if($bbb == 'bmw'){
+//     @return '#ff0000'
+//   }
+// }

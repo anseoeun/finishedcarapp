@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 @import 'media';
+@import 'var';
 @import 'font';
 
 /* ========================================
@@ -157,19 +158,18 @@ i[class*=i-] .svg-prevent{position:absolute;top:0;left:0;z-index: 1;width:100%;h
 =========================================== */
 
 /* splash */
-.splash-wrap{position:relative; height:100vh;background-size:cover !important;background:url('~@/assets/images/bmw/bg-splash.jpg') no-repeat 50% 50%;background-attachment: fixed;}
-.splash-wrap .logo{position:absolute;background-size:auto 100% !important;position:absolute;top:12rem;left:4rem;width:21.6rem;height:4rem;background:url('~@/assets/images/bmw/logo-white.png') no-repeat 0 0;}
-
+.splash-wrap{position:relative; height:100vh;background-size:cover !important;background:url('~@/assets/images/#{$path}/bg-splash.jpg') no-repeat 50% 50%;background-attachment: fixed;}
+.splash-wrap .logo{position:absolute;background-size:auto 100% !important;position:absolute;top:12rem;left:4rem;width:21.6rem;height:4rem;background:url('~@/assets/images/#{$path}/logo-white.png') no-repeat 0 0;}
 
 /* login */
-.login-wrap{position:relative; width:100%; height:100vh; background:var(--path-splash);background-size:cover;overflow:auto;}
+.login-wrap{position:relative; width:100%; height:100vh; background: url('~@/assets/images/#{$path}/bg-splash.jpg') no-repeat 2.55rem 50%;;background-size:cover;overflow:auto;}
 .login-wrap .logo{margin-left:4rem;margin-bottom:7rem;width:21.6rem;height:4rem;background:var(--path-logo-splash);background-size:auto 100%;}
 .login-wrap .min-fix{margin-top:12rem;min-height:40rem;}
 .login-wrap .login-box{width:29.5rem;margin:0 auto;padding:3rem 1.6rem;background: rgba(255, 255, 255, 0.8);border-radius: 0.8rem;}
 .login-wrap .login-box > ul li ~ li{margin-top:0.8rem;}
 .login-wrap .login-box > ul li .inp{padding-left:5.4rem;}
-.login-wrap .login-box > ul li .inp.id{background:#fff url('~@/assets/images/bmw/ico-login-id.png') no-repeat 2.55rem 50%;background-size:1.725rem auto;}
-.login-wrap .login-box > ul li .inp.pw{background:#fff url('~@/assets/images/bmw/ico-login-pw.png') no-repeat 2.55rem 50%;background-size:1.725rem auto;}
+.login-wrap .login-box > ul li .inp.id{background:#fff url('~@/assets/images/#{$path}/ico-login-id.png') no-repeat 2.55rem 50%;background-size:1.725rem auto;}
+.login-wrap .login-box > ul li .inp.pw{background:#fff url('~@/assets/images/#{$path}/ico-login-pw.png') no-repeat 2.55rem 50%;background-size:1.725rem auto;}
 .login-wrap .login-box > ul li .inp input{height:4rem;font-size:1.4rem; color:#7E859A;border:none;}
 .login-wrap .login-box .btn-box{margin-top:3.2rem;}
 .login-wrap .login-box .login-menu{margin-top:1.7rem;}
@@ -183,9 +183,10 @@ i[class*=i-] .svg-prevent{position:absolute;top:0;left:0;z-index: 1;width:100%;h
 .login-wrap .login-box .login-menu ul li span ~ span{padding-left:0.8rem;margin-left:0.7rem;}
 .login-wrap .login-box .login-menu ul li span ~ span:after{content:'';display:block;background:#7E859A;height:0.2rem;width:0.2rem;border-radius:1.1rem;position:absolute;top:40%;left:0;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
 
+
 /* join */
-.join-rule-list-wrap{min-height:100%;padding:6.4rem 4rem 10rem;background:#fff url('~@/assets/images/bmw/bg-join.jpg') no-repeat 50% 50%;background-size:cover;background-attachment: fixed;}
-.join-rule-list-wrap .logo{width:21.6rem;height:4rem;background:url('~@/assets/images/bmw/logo.png') no-repeat 0 0;background-size:auto 100%;}
+.join-rule-list-wrap{min-height:100%;padding:6.4rem 4rem 10rem;background:#fff url('~@/assets/images/#{$path}/bg-join.jpg') no-repeat 50% 50%;background-size:cover;background-attachment: fixed;}
+.join-rule-list-wrap .logo{width:21.6rem;height:4rem;background:url('~@/assets/images/#{$path}/logo.png') no-repeat 0 0;background-size:auto 100%;}
 .join-rule-list-wrap .text{margin-top:3.6rem;}
 .join-rule-list-wrap .text strong{display:block;font-weight:700;font-size:2rem; color:#000;}
 .join-rule-list-wrap .text p{font-size:1.4rem;margin-top:0.8rem;}
@@ -206,18 +207,18 @@ i[class*=i-] .svg-prevent{position:absolute;top:0;left:0;z-index: 1;width:100%;h
 
 
 /* cs-center */
-.cs-center-wrap{position:relative;height:100%;padding:2.4rem 4rem;background:url('~@/assets/images/bmw/bg-cscenter.jpg') no-repeat 50% 50%;background-size:cover;background-attachment: fixed;}
+.cs-center-wrap{position:relative;height:100%;padding:2.4rem 4rem;background:url('~@/assets/images/#{$path}/bg-cscenter.jpg') no-repeat 50% 50%;background-size:cover;background-attachment: fixed;}
 .cs-center-wrap .cs-menu-list{margin-left:-2.75rem;}
 .cs-center-wrap .cs-menu-list:after{content:'';display:block;clear: both;}
 .cs-center-wrap .cs-menu-list li{float:left;margin-top:3.2rem;padding-left:2.75rem;width:33.3333%;}
 .cs-center-wrap .cs-menu-list li  .menu{width:8rem;height:9rem;background:#fff;border-radius:0.8rem;display:flex;flex-direction: column;justify-content:center;align-items:center;}
 .cs-center-wrap .cs-menu-list li .menu .icon i{display:block;width:5.4rem;height:5.4rem;}
 .cs-center-wrap .cs-menu-list li .menu .txt{font-size:1rem;font-weight:700; color:#000;margin-top:0.5rem;}
-.cs-center-wrap .i-cs-notice{background:url('~@/assets/images/bmw/ico-cs-notice.png') no-repeat 0 0;}
-.cs-center-wrap .i-cs-faq{background:url('~@/assets/images/bmw/ico-cs-faq.png') no-repeat 0 0;}
-.cs-center-wrap .i-cs-question{background:url('~@/assets/images/bmw/ico-cs-question.png') no-repeat 0 0;}
-.cs-center-wrap .i-cs-center{background:url('~@/assets/images/bmw/ico-cs-center.png') no-repeat 0 0;}
-.cs-center-wrap .i-cs-apps{background:url('~@/assets/images/bmw/ico-cs-apps.png') no-repeat 0 0;}
+.cs-center-wrap .i-cs-notice{background:url('~@/assets/images/#{$path}/ico-cs-notice.png') no-repeat 0 0;}
+.cs-center-wrap .i-cs-faq{background:url('~@/assets/images/#{$path}/ico-cs-faq.png') no-repeat 0 0;}
+.cs-center-wrap .i-cs-question{background:url('~@/assets/images/#{$path}/ico-cs-question.png') no-repeat 0 0;}
+.cs-center-wrap .i-cs-center{background:url('~@/assets/images/#{$path}/ico-cs-center.png') no-repeat 0 0;}
+.cs-center-wrap .i-cs-apps{background:url('~@/assets/images/#{$path}/ico-cs-apps.png') no-repeat 0 0;}
 
 /* board */
 .board-wrap{padding:2.4rem;}
