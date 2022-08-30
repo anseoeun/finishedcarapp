@@ -59,7 +59,7 @@
 export default {
   data(){
     return{
-      ruleChecked: new Array(5).fill(false),
+      ruleChecked: new Array(4).fill(false),
       ruleList: [
         {
           tit: '차지비 이용약관 (필수)',

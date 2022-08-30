@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import $ from 'jquery'
 
-
 Vue.mixin({
     data(){
       return {

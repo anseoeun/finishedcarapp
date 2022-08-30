@@ -1,6 +1,5 @@
 <template>
-  <!-- <div id="app" :class="'skin-'+skin" :style="customStyle"> -->
-  <div id="app" :style="customStyle">
+  <div id="app">
     <div class="hidden"></div>
     <Layout :layout="layout">
         <router-view />
@@ -9,8 +8,6 @@
 </template>
 <script>
 import Layout from '@/layouts/Layout';
-// import "@/assets/css/style2.scss";
-
 export default {
     name: 'App',
     components: { Layout },
@@ -18,24 +15,38 @@ export default {
       layout(){
         return this.$root.$route.meta.layout
       },
-      customStyle () {
-        return {
-          '--c-path': 'bmw',
-          '--c-base': '#ff0000' // testColor 는 예시 변수명
-        }
-      }
     },
     created(){
+
+    const bmwStyle = () => import('@/assets/css/style-bmw.scss')
+    const benzStyle = () => import('@/assets/css/style-benz.scss')
+    const polestarStyle = () => import('@/assets/css/style-polestar.scss')
+
+      switch(this.skin){ //ui.js에서 설정
+        case 'bmw' : {
+          console.log('a');
+          bmwStyle()
+          break
+        }
+        case 'benz' : {
+          console.log('b');
+          benzStyle()
+          break
+        }
+        case 'polestar' : {
+          console.log('c');
+          polestarStyle()
+          break
+        }
+      }
+      
       document.querySelector('body').classList.add('skin-'+this.skin)
     }
 }
 </script>
 <style lang="scss">
-// @import '~@/assets/css/media.scss';
-// .skin-bmw{
-//   $path: 'bmw';
-//   @import '~@/assets/css/style2.scss';
-// }
+  // @import '~@/assets/css/style-bmw.scss';
+  // @import '~@/assets/css/style2.scss';
   
 </style>
 <!--<style>

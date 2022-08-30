@@ -7,26 +7,90 @@
     <div class="grid-box">
       <ul>
         <li>
+          <div class="cell label">휴대폰</div>
+          <div class="cell auto align-r">
+            <button class="btn-type3 st1"><span>인증하기</span></button>
+          </div>
+        </li>
+        <li>
+          <div class="cell label">회원이름</div>
+          <div class="cell auto">
+            본인인증 후 자동 입력됩니다.
+          </div>
+        </li>
+        <li>
+          <div class="cell label">휴대폰</div>
+          <div class="cell auto">
+            <div class="f-wrap">
+              <div class="auto">
+                001-5555-8888
+              </div>
+              <button class="btn-type3 st1"><span>인증하기</span></button>
+            </div>
+          </div>
+        </li>
+        <li>
           <div class="cell label">아이디</div>
           <div class="cell auto">
             <div class="f-wrap">
               <div class="auto">
-                <input type="text">
+                <input type="text"  placeholder="E-MAIL을 입력하세요">
               </div>
-              <button class="btn-type3 st1">인증</button>
+              <button class="btn-type3 st1"><span>인증</span></button>
             </div>
           </div>
         </li>
         <li>
           <div class="cell label">비밀번호</div>
           <div class="cell auto">
-            <input type="password">
+            <input type="password" placeholder="문자, 숫자, 특수문자 조합">
           </div>
         </li>
         <li>
           <div class="cell label">비밀번호 확인</div>
           <div class="cell auto">
-            <input type="password">
+            <input type="password" placeholder="비밀번호 재입력">
+          </div>
+        </li>
+      </ul>
+      <div class="txt-result">인증이 완료되었습니다.</div>
+    </div>
+    <br>
+    <div class="grid-box">
+      <ul>
+        <li>
+          <div class="cell label">휴대폰</div>
+          <div class="cell auto align-r">
+            <button class="btn-type3 st1"><span>인증하기</span></button>
+          </div>
+        </li>
+        <li>
+          <div class="cell label">회원이름</div>
+          <div class="cell auto">
+            <div class="inp-txt">본인인증 후 자동 입력됩니다.</div>
+          </div>
+        </li>
+        <li>
+          <div class="cell label">아이디</div>
+          <div class="cell auto">
+            <div class="f-wrap">
+              <div class="auto">
+                <input type="text"  placeholder="E-MAIL을 입력하세요">
+              </div>
+              <button class="btn-type3 st1"><span>인증</span></button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="cell label">비밀번호</div>
+          <div class="cell auto">
+            <input type="password" placeholder="문자, 숫자, 특수문자 조합">
+          </div>
+        </li>
+        <li>
+          <div class="cell label">비밀번호 확인</div>
+          <div class="cell auto">
+            <input type="password" placeholder="비밀번호 재입력">
           </div>
         </li>
       </ul>

@@ -18,7 +18,7 @@
             </li>
           </ul>
           <div class="btn-box">
-              <button class="btn-type1 st1">로그인</button>
+              <button class="btn-type1 st1"><span>로그인</span></button>
           </div>
           <div class="login-menu">
             <ul>

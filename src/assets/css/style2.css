@@ -2551,7 +2551,7 @@ i[class*=i-] .svg-prevent {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: var(--path-splash);
+  background: url("~@/assets/images/bmw/bg-splash.jpg") no-repeat 2.55rem 50%;
   background-size: cover;
   overflow: auto;
 }
