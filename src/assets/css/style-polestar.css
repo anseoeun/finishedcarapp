@@ -2359,6 +2359,7 @@ input[type=text], input[type=password], input[type=number], textarea {
   font-size: 1.2rem;
   border: 1px solid #7E859A;
   height: 3.2rem;
+  padding: 0 0.8rem;
   border-radius: 0.4rem;
   outline: none;
   color: #53565A;
@@ -2366,6 +2367,84 @@ input[type=text], input[type=password], input[type=number], textarea {
   -ms-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
+}
+
+.inp-check {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.inp-check .inp {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.inp-check input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+  opacity: 0;
+}
+
+.inp-check .ic {
+  display: inline-block;
+  overflow: hidden;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 1px solid #7E859A;
+  border-radius: 0.2rem;
+}
+
+.inp-check input:checked ~ .ic {
+  background: url("data:image/svg+xml,%3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.5L4 7.5L9 0.5' stroke='%232A64AB'/%3E%3C/svg%3E%0A") no-repeat 50% 50%;
+  background-size: 1rem 0.9rem;
+}
+
+.inp-check input:disabled ~ .ic {
+  background: #f0f0f0;
+}
+
+.inp-check .t {
+  display: inline-block;
+  padding-left: 0.8rem;
+  vertical-align: middle;
+  font-size: 1.4rem;
+}
+
+.inp-check input:disabled,
+.inp-check input:disabled ~ * {
+  cursor: default !important;
+}
+
+.inp-check.st2 .ic {
+  border: none;
+}
+
+.inp-check.st2 .t {
+  font-size: 1.2rem;
+}
+
+/* align */
+.align-c {
+  text-align: center !important;
+}
+
+.align-l {
+  text-align: left !important;
+}
+
+.align-r {
+  text-align: right !important;
 }
 
 /* icon */
@@ -2431,30 +2510,67 @@ i[class*=i-] .svg-prevent {
 }
 
 .btn-type1 {
+  position: relative;
+  overflow: hidden;
   display: block;
   height: 4.8rem;
   font-size: 1.2rem;
   font-weight: normal;
   line-height: 4.8rem;
+  border-radius: 0.8rem;
+}
+
+.btn-type1 span {
+  display: block;
   padding: 0 1.6rem;
+}
+
+.btn-type2 {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  height: 4rem;
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 4rem;
   border-radius: 0.8rem;
 }
 
 .btn-type3 {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  height: 3.2rem;
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 3.2rem;
+  border-radius: 0.4rem;
+}
+
+.btn-type4 {
   display: inline-block;
   width: auto !important;
   height: 2.4rem;
   font-size: 1.2rem;
   font-weight: normal;
   line-height: 2.4rem;
-  padding: 0 1rem;
   border-radius: 0.4rem;
 }
 
+.btn-type4 span {
+  display: block;
+  padding: 0 1rem;
+}
+
 [class*=btn-type].st1 {
+  position: relative;
   color: #fff;
-  background: #2A64AB;
-  border: 1px solid #2A64AB;
+  background: #53565A;
+  border: 1px solid #53565A;
+}
+
+[class*=btn-type].st1 span {
+  display: inline-block;
 }
 
 /* tit-type */
@@ -2489,6 +2605,7 @@ i[class*=i-] .svg-prevent {
   padding: 0.8rem;
   background: #fff;
   border-radius: 0.8rem;
+  font-size: 1.2rem;
 }
 
 .grid-box ul {
@@ -2497,11 +2614,14 @@ i[class*=i-] .svg-prevent {
 }
 
 .grid-box ul li {
+  position: relative;
   display: table-row;
 }
 
 .grid-box ul li ~ li > * {
+  height: 4.9rem;
   border-top: 1px solid #7E859A;
+  vertical-align: middle;
 }
 
 .grid-box ul li > * {
@@ -2512,7 +2632,7 @@ i[class*=i-] .svg-prevent {
 }
 
 .grid-box ul li > * ~ * {
-  padding-left: 1rem;
+  padding-left: 1.5rem;
 }
 
 .grid-box ul li > .label {
@@ -2522,6 +2642,11 @@ i[class*=i-] .svg-prevent {
 
 .grid-box ul li > .auto {
   width: auto;
+}
+
+.grid-box .txt-result {
+  color: #FF7500;
+  margin-top: 0.5rem;
 }
 
 /* ========================================
@@ -2562,4 +2687,147 @@ i[class*=i-] .svg-prevent {
 }
 
 /* login */
+.login-wrap .login-box .login-menu {
+  margin-top: 1.7rem;
+}
+
+.login-wrap .login-box .login-menu ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-wrap .login-box .login-menu ul li {
+  position: relative;
+  font-size: 1.1rem;
+  display: inline-block;
+}
+
+.login-wrap .login-box .login-menu ul li ~ li {
+  padding-left: 1.5rem;
+  margin-left: 1.4rem;
+}
+
+.login-wrap .login-box .login-menu ul li ~ li:after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 1rem;
+  background: #53565A;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+.login-wrap .login-box .login-menu ul li button,
+.login-wrap .login-box .login-menu ul li a {
+  display: inline-block;
+  width: auto;
+}
+
+.login-wrap .login-box .login-menu ul li span {
+  display: inline-block;
+  position: relative;
+}
+
+.login-wrap .login-box .login-menu ul li span ~ span {
+  padding-left: 0.8rem;
+  margin-left: 0.7rem;
+}
+
+.login-wrap .login-box .login-menu ul li span ~ span:after {
+  content: "";
+  display: block;
+  background: #53565A;
+  height: 0.2rem;
+  width: 0.2rem;
+  border-radius: 1.1rem;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+.login-wrap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover !important;
+  overflow: auto;
+}
+
+.login-wrap .login-box {
+  width: 29.5rem;
+  margin: 0 auto;
+  padding: 3rem 1.6rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0.8rem;
+}
+
+.login-wrap .login-box > ul li ~ li {
+  margin-top: 0.8rem;
+}
+
+.login-wrap .login-box > ul li .inp {
+  padding-left: 5.4rem;
+}
+
+.login-wrap .login-box > ul li .inp input {
+  height: 4rem;
+  font-size: 1.4rem;
+  color: #53565A;
+  border: none;
+  background: #fff;
+}
+
+.login-wrap .login-box .btn-box {
+  margin-top: 3.2rem;
+}
+
+.login-wrap .logo {
+  margin-left: 6rem;
+  margin-top: 11.2rem;
+  width: 12.2rem;
+  height: 7.1rem;
+  background: url("~@/assets/images/polestar/logo.png") no-repeat 0 0;
+  background-size: auto 100%;
+}
+
+.login-wrap .login-box {
+  width: 25.6rem;
+  margin: 0 auto;
+  margin-top: 15.9rem;
+  padding: 0;
+}
+
+.login-wrap .login-box > ul li {
+  border-bottom: 1px solid #7e8083;
+}
+
+.login-wrap .login-box > ul li ~ li {
+  margin-top: 0.8rem;
+}
+
+.login-wrap .login-box > ul li .inp {
+  padding-left: 2.4rem;
+}
+
+.login-wrap .login-box > ul li .inp input {
+  background: #fff;
+  border: none;
+  padding-left: 0;
+}
+
+.form-address .btn-addr-sch {
+  width: 7.2rem;
+  margin-left: 1.6rem;
+}
+
+.f-wrap-list .f-wrap ~ .f-wrap {
+  margin-top: 0.8rem;
+}
 /*# sourceMappingURL=style-polestar.css.map */

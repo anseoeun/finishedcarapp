@@ -1,9 +1,9 @@
 <template>
   <div class="contents">
-    <button class="back"><Icon type="back" /></button>
+    <button class="back"><Icon v-if="skin !== 'polestar'" type="back" /></button>
     <div class="login-wrap">
+      <div class="logo"></div>
       <div class="min-fix">
-        <div class="logo"></div>
         <div class="login-box">
           <ul>
             <li>

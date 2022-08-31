@@ -4,12 +4,73 @@
     <Input type="text" v-model="form.form1" placeholder="text 인풋" />
     <Input type="number" v-model="form.form1" placeholder="number 인풋" maxlength="6" />
 
+    <br>
+    <br>
+    <div class="f-wrap-list form-address">
+      <div class="f-wrap">
+        <div class="auto"><Input type="text" v-model="form.addr1" placeholder="도로명, 건물명, 지번" /></div>
+        <button class="btn-type3 st1 btn-addr-sch"><span>주소검색</span></button>
+      </div>
+      <div class="f-wrap">
+        <div class="auto"><Input type="text" v-model="form.addr2" placeholder="상세주소" /></div>
+      </div>
+    </div>
+    <br>
+    <div class="grid-box form-card">
+      <ul>
+        <li>
+          <div class="cell label">카드번호</div>
+          <div class="cell auto">
+            <div class="f-wrap">
+              <div style="width:25%"><Input type="text" v-model="form.card1" /></div>
+              <div style="width:25%"><Input type="text" v-model="form.card2" /></div>
+              <div style="width:25%"><Input type="text" v-model="form.card3" /></div>
+              <div style="width:25%"><Input type="text" v-model="form.card4" /></div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="cell label">유효기간</div>
+          <div class="cell auto">
+            <div class="f-wrap">
+              <div style="width:25%"><Input type="text" v-model="form.month" /></div>
+              <div style="width:25%">월</div>
+              <div style="width:25%"><Input type="text" v-model="form.year" /></div>
+              <div style="width:25%">년</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="cell label">비밀번호</div>
+          <div class="cell auto">
+            <div class="f-wrap">
+              <div style="width:25%"><Input type="text" v-model="form.month" /></div>
+              <div style="width:75%">** (앞2자리)</div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="cell label">인증번호</div>
+          <div class="cell auto">
+            <div class="f-wrap">
+              <div style="width:25%"><Input type="text" v-model="form.month" /></div>
+              <div style="width:25%"></div>
+              <div style="width:25%"></div>
+              <div style="width:25%"></div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <br>
     <div class="grid-box">
       <ul>
         <li>
           <div class="cell label">휴대폰</div>
           <div class="cell auto align-r">
-            <button class="btn-type3 st1"><span>인증하기</span></button>
+            <button class="btn-type4 st1"><span>인증하기</span></button>
           </div>
         </li>
         <li>
@@ -25,7 +86,7 @@
               <div class="auto">
                 001-5555-8888
               </div>
-              <button class="btn-type3 st1"><span>인증하기</span></button>
+              <button class="btn-type4 st1"><span>인증하기</span></button>
             </div>
           </div>
         </li>
@@ -34,67 +95,37 @@
           <div class="cell auto">
             <div class="f-wrap">
               <div class="auto">
-                <input type="text"  placeholder="E-MAIL을 입력하세요">
+                <Input type="text" v-model="form.email" placeholder="E-MAIL을 입력하세요" />
               </div>
-              <button class="btn-type3 st1"><span>인증</span></button>
+              <button class="btn-type4 st1"><span>인증</span></button>
             </div>
           </div>
         </li>
         <li>
           <div class="cell label">비밀번호</div>
           <div class="cell auto">
-            <input type="password" placeholder="문자, 숫자, 특수문자 조합">
+            <Input type="password" v-model="form.pw" placeholder="문자, 숫자, 특수문자 조합" />
           </div>
         </li>
         <li>
           <div class="cell label">비밀번호 확인</div>
           <div class="cell auto">
-            <input type="password" placeholder="비밀번호 재입력">
+            <Input type="password" v-model="form.pwcheck" placeholder="비밀번호 재입력" />
           </div>
         </li>
       </ul>
       <div class="txt-result">인증이 완료되었습니다.</div>
     </div>
     <br>
-    <div class="grid-box">
-      <ul>
-        <li>
-          <div class="cell label">휴대폰</div>
-          <div class="cell auto align-r">
-            <button class="btn-type3 st1"><span>인증하기</span></button>
-          </div>
-        </li>
-        <li>
-          <div class="cell label">회원이름</div>
-          <div class="cell auto">
-            <div class="inp-txt">본인인증 후 자동 입력됩니다.</div>
-          </div>
-        </li>
-        <li>
-          <div class="cell label">아이디</div>
-          <div class="cell auto">
-            <div class="f-wrap">
-              <div class="auto">
-                <input type="text"  placeholder="E-MAIL을 입력하세요">
-              </div>
-              <button class="btn-type3 st1"><span>인증</span></button>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="cell label">비밀번호</div>
-          <div class="cell auto">
-            <input type="password" placeholder="문자, 숫자, 특수문자 조합">
-          </div>
-        </li>
-        <li>
-          <div class="cell label">비밀번호 확인</div>
-          <div class="cell auto">
-            <input type="password" placeholder="비밀번호 재입력">
-          </div>
-        </li>
-      </ul>
-    </div>
+    
+
+    <br>
+
+    <label class="inp-check">
+      <input type="checkbox">
+      <span class="ic"></span>
+      <span class="t">완성차 제공 서비스 안내사항 동의</span>
+    </label>
 
 
     <h2 class="guide-tit">form-box 내부 인풋</h2>    
@@ -159,7 +190,7 @@
 
     <h2 class="guide-tit">체크버튼 단독</h2>    
     <div class="check">
-        <button class="btn-type3 st2" @click="checkIcon($event, 'ruleChecked')">
+        <button class="btn-type4 st2" @click="checkIcon($event, 'ruleChecked')">
           <Icon type="check" :class="{on: ruleChecked}" />
           <span class="txt">체크 토글 버튼</span>
         </button>
@@ -167,7 +198,7 @@
 
     <h2 class="guide-tit">체크버튼 여러개</h2>    
     <div v-for="(item, index) in ruleList" :key="index" class="check">
-        <button class="btn-type3 st2" @click="checkIcon($event, 'ruleChecked2', index)">
+        <button class="btn-type4 st2" @click="checkIcon($event, 'ruleChecked2', index)">
           <Icon type="check" :class="{on: ruleChecked2[index]}" />
           <span class="txt">{{ item.tit }}</span>
         </button>
