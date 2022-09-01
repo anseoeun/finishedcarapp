@@ -4,7 +4,9 @@ import $ from 'jquery'
 Vue.mixin({
     data(){
       return {
-        skin: 'benz'
+        skin: 'bmw'
+        // skin: 'benz'
+        // skin: 'polestar'
       }
     },
     methods: {

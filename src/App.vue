@@ -24,17 +24,14 @@ export default {
 
       switch(this.skin){ //ui.js에서 설정
         case 'bmw' : {
-          console.log('a');
           bmwStyle()
           break
         }
         case 'benz' : {
-          console.log('b');
           benzStyle()
           break
         }
         case 'polestar' : {
-          console.log('c');
           polestarStyle()
           break
         }

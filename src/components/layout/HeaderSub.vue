@@ -4,22 +4,21 @@
           <button class="back"><Icon type="back" /></button>
         </div>
         <div class="center">
-          <strong class="tit">{{ title }}</strong>
+          <h1 class="tit">{{ title }}</h1>
         </div>
     </div>
 </template>
 <script>
 export default {
-    computed: {
-      title(){
-        return this.$root.$route.meta.title ? this.$root.$route.meta.title : ''
-      },
-    },   
-    data() {
-        return {
-            status: true,
-            alarm: 10
-        }
-    }
+  computed: {
+    title(){
+      if(this.$route.path === '/joinRuleList') { //이용 약관 동의
+        if(this.skin === 'bmw') return '회원가입'
+        if(this.skin === 'benz') return ''
+        if(this.skin === 'polestar') return '이용 약관 동의'
+      }
+      return this.$root.$route.meta.title ? this.$root.$route.meta.title : ''
+    },
+  },
 }
 </script>

@@ -2170,10 +2170,9 @@ h1.hidden {
   white-space: nowrap !important;
 }
 
-/* layout-none */
-.layout-none .back {
+.contents > .back {
   position: absolute;
-  top: 1rem;
+  top: 0.5rem;
   left: 1rem;
   width: 5rem;
   height: 5rem;
@@ -2359,6 +2358,7 @@ input[type=text], input[type=password], input[type=number], textarea {
   font-size: 1.2rem;
   border: 1px solid #7E859A;
   height: 3.2rem;
+  padding: 0 0.8rem;
   border-radius: 0.4rem;
   outline: none;
   color: #7E859A;
@@ -2366,6 +2366,84 @@ input[type=text], input[type=password], input[type=number], textarea {
   -ms-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
+}
+
+.inp-check {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.inp-check .inp {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.inp-check input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+  opacity: 0;
+}
+
+.inp-check .ic {
+  display: inline-block;
+  overflow: hidden;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 1px solid #7E859A;
+  border-radius: 0.2rem;
+}
+
+.inp-check input:checked ~ .ic {
+  background: url("data:image/svg+xml,%3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.5L4 7.5L9 0.5' stroke='%232A64AB'/%3E%3C/svg%3E%0A") no-repeat 50% 50%;
+  background-size: 1rem 0.9rem;
+}
+
+.inp-check input:disabled ~ .ic {
+  background: #f0f0f0;
+}
+
+.inp-check .t {
+  display: inline-block;
+  padding-left: 0.8rem;
+  vertical-align: middle;
+  font-size: 1.4rem;
+}
+
+.inp-check input:disabled,
+.inp-check input:disabled ~ * {
+  cursor: default !important;
+}
+
+.inp-check.st2 .ic {
+  border: none;
+}
+
+.inp-check.st2 .t {
+  font-size: 1.2rem;
+}
+
+/* align */
+.align-c {
+  text-align: center !important;
+}
+
+.align-l {
+  text-align: left !important;
+}
+
+.align-r {
+  text-align: right !important;
 }
 
 /* icon */
@@ -2438,22 +2516,53 @@ i[class*=i-] .svg-prevent {
   font-size: 1.2rem;
   font-weight: normal;
   line-height: 4.8rem;
+  border-radius: 0.8rem;
+}
+
+.btn-type1 span {
+  display: block;
   padding: 0 1.6rem;
+}
+
+.btn-type2 {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  height: 4rem;
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 4rem;
   border-radius: 0.8rem;
 }
 
 .btn-type3 {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  height: 3.2rem;
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 3.2rem;
+  border-radius: 0.4rem;
+}
+
+.btn-type4 {
   display: inline-block;
   width: auto !important;
   height: 2.4rem;
   font-size: 1.2rem;
   font-weight: normal;
   line-height: 2.4rem;
-  padding: 0 1rem;
   border-radius: 0.4rem;
 }
 
+.btn-type4 span {
+  display: block;
+  padding: 0 1rem;
+}
+
 [class*=btn-type].st1 {
+  position: relative;
   color: #fff;
   background: #2A64AB;
   border: 1px solid #2A64AB;
@@ -2461,9 +2570,14 @@ i[class*=i-] .svg-prevent {
 
 /* tit-type */
 .tit-type1 {
-  font-size: 2rem;
-  color: #000;
+  margin-bottom: 1.2rem;
+  color: #111F42;
   font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.tit-type1 ~ .tit-type1 {
+  margin-top: 1.6rem;
 }
 
 /* f-wrap */
@@ -2491,6 +2605,7 @@ i[class*=i-] .svg-prevent {
   padding: 0.8rem;
   background: #fff;
   border-radius: 0.8rem;
+  font-size: 1.2rem;
 }
 
 .grid-box ul {
@@ -2499,11 +2614,14 @@ i[class*=i-] .svg-prevent {
 }
 
 .grid-box ul li {
+  position: relative;
   display: table-row;
 }
 
 .grid-box ul li ~ li > * {
+  height: 4.9rem;
   border-top: 1px solid #7E859A;
+  vertical-align: middle;
 }
 
 .grid-box ul li > * {
@@ -2514,7 +2632,7 @@ i[class*=i-] .svg-prevent {
 }
 
 .grid-box ul li > * ~ * {
-  padding-left: 1rem;
+  padding-left: 1.5rem;
 }
 
 .grid-box ul li > .label {
@@ -2524,6 +2642,16 @@ i[class*=i-] .svg-prevent {
 
 .grid-box ul li > .auto {
   width: auto;
+}
+
+.grid-box .txt-success {
+  color: #2A64AB;
+  margin-top: 0.5rem;
+}
+
+.grid-box .txt-error {
+  color: #FF4F44;
+  margin-top: 0.5rem;
 }
 
 /* ========================================
@@ -2557,46 +2685,11 @@ i[class*=i-] .svg-prevent {
   overflow: auto;
 }
 
-.login-wrap .logo {
-  margin-left: 4rem;
-  margin-bottom: 7rem;
-  width: 21.6rem;
-  height: 4rem;
-  background: url("~@/assets/images/bmw/logo-white.png") no-repeat 0 0;
-  background-size: auto 100%;
-}
-
 .login-wrap .min-fix {
-  margin-top: 12rem;
-  min-height: 40rem;
-}
-
-.login-wrap .login-box {
-  width: 29.5rem;
-  margin: 0 auto;
-  padding: 3rem 1.6rem;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 0.8rem;
-}
-
-.login-wrap .login-box > ul li ~ li {
-  margin-top: 0.8rem;
-}
-
-.login-wrap .login-box > ul li .inp {
-  padding-left: 5.4rem;
-}
-
-.login-wrap .login-box > ul li .inp input {
-  height: 4rem;
-  font-size: 1.4rem;
-  color: #7E859A;
-  border: none;
-  background: #fff;
-}
-
-.login-wrap .login-box .btn-box {
-  margin-top: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-wrap .login-box .login-menu {
@@ -2613,7 +2706,6 @@ i[class*=i-] .svg-prevent {
 .login-wrap .login-box .login-menu ul li {
   position: relative;
   font-size: 1.1rem;
-  color: #7E859A;
   display: inline-block;
 }
 
@@ -2665,8 +2757,51 @@ i[class*=i-] .svg-prevent {
   -webkit-transform: translateY(-50%);
 }
 
+.login-wrap .login-box {
+  width: 29.5rem;
+  margin: 0 auto;
+  padding: 3rem 1.6rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0.8rem;
+}
+
+.login-wrap .login-box > ul li ~ li {
+  margin-top: 0.8rem;
+}
+
+.login-wrap .login-box > ul li .inp {
+  padding-left: 5.4rem;
+}
+
+.login-wrap .login-box > ul li .inp input {
+  height: 4rem;
+  font-size: 1.4rem;
+  color: #7E859A;
+  border: none;
+  background: #fff;
+}
+
+.login-wrap .login-box .btn-box {
+  margin-top: 3.2rem;
+}
+
 .login-wrap {
   background: url("~@/assets/images/bmw/bg-splash.jpg") no-repeat 0 50%;
+}
+
+.login-wrap .min-fix {
+  margin-top: 16.4rem;
+  height: 40rem;
+}
+
+.login-wrap .logo {
+  position: absolute;
+  top: 12rem;
+  left: 4rem;
+  width: 21.6rem;
+  height: 4rem;
+  background: url("~@/assets/images/bmw/logo-white.png") no-repeat 0 0;
+  background-size: auto 100%;
 }
 
 .login-wrap .login-box > ul li .inp.id {
@@ -2677,5 +2812,206 @@ i[class*=i-] .svg-prevent {
 .login-wrap .login-box > ul li .inp.pw {
   background: #fff url("~@/assets/images/bmw/ico-login-pw.png") no-repeat 2.55rem 50%;
   background-size: 1.725rem auto;
+}
+
+/* join */
+.join-rule-list-wrap {
+  min-height: 100%;
+  padding: 6.4rem 2rem 0;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.join-rule-list-wrap .text {
+  margin-top: 3.6rem;
+}
+
+.join-rule-list-wrap .text strong {
+  display: block;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #000;
+}
+
+.join-rule-list-wrap .text p {
+  font-size: 1.4rem;
+  margin-top: 0.8rem;
+}
+
+.join-rule-list-wrap .btn-wrap {
+  margin-top: 2.4rem;
+}
+
+.join-rule-list-wrap .grid-list-menu {
+  border-radius: 0.8rem;
+  overflow: hidden;
+  margin-top: 3.6rem;
+}
+
+.join-rule-list-wrap .grid-list-menu > .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 4.9rem;
+  padding: 0 1rem 0 1.5rem;
+  background: #fff;
+}
+
+.join-rule-list-wrap .grid-list-menu > .row .check,
+.join-rule-list-wrap .grid-list-menu > .row .check button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 3rem;
+}
+
+.join-rule-list-wrap .grid-list-menu > .row .check .icon-check {
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.join-rule-list-wrap .grid-list-menu > .row .check .txt {
+  margin-left: 1rem;
+  font-size: 1.4rem;
+}
+
+.join-rule-list-wrap .grid-list-menu > .row .right {
+  position: relative;
+  margin-left: auto;
+}
+
+.join-rule-list-wrap .grid-list-menu > .row.total {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: #f8fafb;
+}
+
+.join-rule-list-wrap .grid-list-menu > .row.total .check .icon-check {
+  background: #7E859A;
+}
+
+.join-rule-list-wrap .grid-list-menu > .row.total .check .icon-check.on {
+  background: #2A64AB;
+}
+
+.join-rule-list-wrap .grid-list-menu > .row.total .txt {
+  color: #000;
+  font-weight: 700;
+}
+
+.join-rule-list-wrap .grid-list-menu > .row .bth-link {
+  display: block;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.join-rule-list-wrap {
+  padding-bottom: 10rem;
+  background: #fff url("~@/assets/images/bmw/bg-join.jpg") no-repeat 50% 50%;
+}
+
+.join-rule-list-wrap .logo {
+  width: 21.6rem;
+  height: 4rem;
+  background: url("~@/assets/images/bmw/logo.png") no-repeat 0 0;
+  background-size: auto 100%;
+}
+
+.form-address .btn-addr-sch {
+  width: 7.2rem;
+  margin-left: 1.6rem;
+}
+
+.f-wrap-list .f-wrap ~ .f-wrap {
+  margin-top: 0.8rem;
+}
+
+/* layerpopup */
+.alert-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 28.9rem;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.alert-popup .btn-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert-popup .btn-close svg path {
+  stroke: #000;
+}
+
+.alert-popup .dim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.alert-popup .popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 1.6rem;
+  margin: 0 auto;
+  border-radius: 0.8rem;
+  min-width: 28.9rem;
+  max-width: 90%;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.alert-popup .popup .pop-header {
+  position: relative;
+}
+
+.alert-popup .popup .pop-header .pop-tit {
+  padding-top: 0.8rem;
+  margin-bottom: 3.2rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.alert-popup .popup .pop-body .alert-txt {
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.alert-popup .popup .pop-body .btn-wrap {
+  margin-top: 3.2rem;
+}
+
+.alert-popup .btn-wrap [class*=btn-type] ~ [class*=btn-type] {
+  margin-top: 1.6rem;
+}
+
+.alert-popup .popup .pop-header .pop-tit {
+  color: #111F42;
 }
 /*# sourceMappingURL=style-bmw.css.map */

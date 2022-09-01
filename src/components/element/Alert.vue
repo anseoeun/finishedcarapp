@@ -5,7 +5,7 @@
     class="alert-popup">
       <div class="dim" v-if="isDim"></div>
       <div class="popup">
-        <button v-if="close" class="btn-close" @click="$emit('close');"><Icon type="close" /></button>        
+        <!-- <button v-if="close" class="btn-close" @click="$emit('close');"><Icon type="close" /></button>         -->
           <div v-if="$slots.header" class="pop-header">
               <div class="pop-tit">
                 <slot name="header" />
@@ -17,7 +17,7 @@
                </div>
 
                <div class="btn-wrap">
-                 <button v-if="confirm" class="btn-type1 st1" @click="$emit('close');$emit('confirm')">확인</button>
+                 <button v-if="confirm" class="btn-type1 st1" @click="$emit('close');$emit('confirm')"><span>확인</span></button>
                  <slot name="btn" />
                </div>
           </div>

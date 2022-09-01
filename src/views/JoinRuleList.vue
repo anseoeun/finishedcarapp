@@ -1,7 +1,8 @@
 <template>
   <div class="contents">
+    <button v-if="skin === 'benz'" class="back"><Icon v-if="skin !== 'polestar'" type="back" /></button>    
     <div class="join-rule-list-wrap">
-      <div class="logo"></div>
+      <div v-if="skin !== 'polestar'" class="logo"></div>
       <div class="text">
         <strong>이용 약관 동의</strong>
         <p>
@@ -29,7 +30,7 @@
                     <span class="txt">{{ item.tit }}</span>
                   </button>
               </div>
-              <div class="right">
+              <div v-if="item.tit !== '이메일 / SMS 정보수집 동의'" class="right">
                 <router-link :to="item.link" class="bth-link">
                   <Icon type="arr-right" />
                 </router-link>
@@ -37,20 +38,10 @@
             </div>
           </div>
           <div class="btn-wrap">
-            <button class="btn-type1 st1" @click="alertPop = true">동의</button>
+            <button class="btn-type1 st1" @click="alertPop = true"><span>동의</span></button>
           </div>
         </div>
     </div>
-
-    <!-- 팝업 -->
-    <Alert :is-open="alertPop" @close="alertPop = false">      
-        <template slot="header">전화번호 인증 안내</template>
-        <template slot="body">
-          차지비 신규앱 최초 로그인 시<br />
-          전화번호 인증을 1회 진행합니다.<br />
-          약관 동의 후 회원 정보를 확인해주세요.
-        </template>
-    </Alert>    
   </div>
 </template>
 
@@ -78,8 +69,6 @@ export default {
           link: '/'
         }
       ],
-      //팝업
-      alertPop: false,            
     }
   },
   methods: {
@@ -93,3 +82,8 @@ export default {
   }
 }
 </script>
+
+<style scroped>
+  .skin-benz .header-sub{display:none;}
+  .skin-benz .contents{padding-top:0 !important;}
+</style>

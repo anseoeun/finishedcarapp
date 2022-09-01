@@ -8,7 +8,7 @@
           <ul>
             <li>
               <div class="inp id">
-                <input type="text" placeholder="아이디">
+                <input type="text" placeholder="아이디" @click="alert.uncertifiedCar = true">
               </div>
             </li>
             <li>
@@ -18,7 +18,7 @@
             </li>
           </ul>
           <div class="btn-box">
-              <button class="btn-type1 st1"><span>로그인</span></button>
+              <button class="btn-type1 st1" @click="alert.idpwCheck = true"><span>로그인</span></button>
           </div>
           <div class="login-menu">
             <ul>
@@ -30,28 +30,25 @@
       </div>
     </div>
     
-     <!-- 팝업:미인증차량 안내 -->
-    <Alert :is-open="alert.uncertifiedCar" 
-      @close="alert.uncertifiedCar=false;status='paymentCheck';guideTextStatus='paymentCheck'"
+     <!-- 팝업:이메일안내 -->
+    <Alert :is-open="alert.emailCheck" 
+      @close="alert.emailCheck=false;"
     >
-        <template slot="header">미인증차량 안내</template>
+        <template slot="header">알림</template>
         <template slot="body">
-          미인증 차량은 등록이 불가능하며 삭제됩니다.
-          <br />계속 진행을 원하시는 경우 확인 버튼을
-          <br />눌러주세요.
+          아이디는 이메일 형식이어야 합니다.
         </template>
     </Alert>
-    <!-- 팝업:생체인식 사용 -->
-    <Alert :is-open="alert.biometricsPop" @close="alert.biometricsPop=false" :confirm="false" class="header-title-size2">
-        <template slot="header">생체인식 사용</template>
+    <!-- 팝업:아이디비밀번호안내 -->
+    <Alert :is-open="alert.idpwCheck" @close="alert.idpwCheck=false">
+        <template slot="header">알림</template>
         <template slot="body">
-          <span class="bold t-m">생체인식을 사용하시겠습니까?</span>
+          아이디 또는 비밀번호가 잘못되었습니다. 
+          <br>법인, 완성차회원인 경우 인증이 완료되어야
+          홈페이지/모바일 앱 로그인이 가능합니다.
+          <br>(인증까지 최대 2~3일 소요)
         </template>
-        <template slot="btn">
-          <button class="btn-type1 st1" @click="alertPop=false">사용</button>
-          <button class="btn-type1 st3" @click="alertPop=false">사용안함</button>
-        </template>
-    </Alert>         
+    </Alert>
   </div>
 </template>
 
@@ -72,8 +69,8 @@ export default {
       }, 
 
       alert: {
-        uncertifiedCar: false,
-        biometricsPop: false
+        emailCheck: false,
+        idpwCheck: false
       }
     }
   },
