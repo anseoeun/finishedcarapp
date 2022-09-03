@@ -1,7 +1,7 @@
 <template>
   <div class="contents">
     <button v-if="skin === 'benz'" class="back"><Icon v-if="skin !== 'polestar'" type="back" /></button>    
-    <div class="join-rule-list-wrap">
+    <div class="join-etc-wrap join-rule-wrap">
       <div v-if="skin !== 'polestar'" class="logo"></div>
       <div class="text">
         <strong>이용 약관 동의</strong>
@@ -37,9 +37,9 @@
               </div>
             </div>
           </div>
-          <div class="btn-wrap">
-            <button class="btn-type1 st1" @click="alertPop = true"><span>동의</span></button>
-          </div>
+        </div>
+        <div class="btn-wrap">
+          <button class="btn-type1 st1" @click="alertPop = true"><span>동의</span></button>
         </div>
     </div>
   </div>

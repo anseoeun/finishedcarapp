@@ -8,7 +8,7 @@
           <ul>
             <li>
               <div class="inp id">
-                <input type="text" placeholder="아이디" @click="alert.uncertifiedCar = true">
+                <input type="text" placeholder="아이디" @click="popup.emailCheck = true">
               </div>
             </li>
             <li>
@@ -18,7 +18,7 @@
             </li>
           </ul>
           <div class="btn-box">
-              <button class="btn-type1 st1" @click="alert.idpwCheck = true"><span>로그인</span></button>
+              <button class="btn-type1 st1" @click="popup.idpwCheck = true"><span>로그인</span></button>
           </div>
           <div class="login-menu">
             <ul>
@@ -31,24 +31,26 @@
     </div>
     
      <!-- 팝업:이메일안내 -->
-    <Alert :is-open="alert.emailCheck" 
-      @close="alert.emailCheck=false;"
+    <Popup :is-open="popup.emailCheck" 
+      @close="popup.emailCheck=false;"
     >
         <template slot="header">알림</template>
         <template slot="body">
-          아이디는 이메일 형식이어야 합니다.
+          <div class="alert-txt">아이디는 이메일 형식이어야 합니다.</div>
         </template>
-    </Alert>
+    </Popup>
     <!-- 팝업:아이디비밀번호안내 -->
-    <Alert :is-open="alert.idpwCheck" @close="alert.idpwCheck=false">
+    <Popup :is-open="popup.idpwCheck" @close="popup.idpwCheck=false">
         <template slot="header">알림</template>
         <template slot="body">
-          아이디 또는 비밀번호가 잘못되었습니다. 
-          <br>법인, 완성차회원인 경우 인증이 완료되어야
-          홈페이지/모바일 앱 로그인이 가능합니다.
-          <br>(인증까지 최대 2~3일 소요)
+          <div class="alert-txt">
+            아이디 또는 비밀번호가 잘못되었습니다.
+            <br>법인, 완성차회원인 경우 인증이 완료되어야
+            홈페이지/모바일 앱 로그인이 가능합니다.
+            <br>(인증까지 최대 2~3일 소요)
+          </div>
         </template>
-    </Alert>
+    </Popup>
   </div>
 </template>
 
@@ -68,7 +70,7 @@ export default {
         pin2: '',        
       }, 
 
-      alert: {
+      popup: {
         emailCheck: false,
         idpwCheck: false
       }

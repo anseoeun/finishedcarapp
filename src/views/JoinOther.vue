@@ -1,6 +1,6 @@
 <template>
   <div class="contents">
-    <div class="join-other-wrap">
+    <div v-if="skin === 'bmw'" class="join-other-wrap">
       <div class="logo"></div>
       
       <div class="link-box">

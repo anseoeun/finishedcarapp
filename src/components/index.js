@@ -9,6 +9,8 @@ import BtmLayer from './element/BtmLayer'
 Vue.component('BtmLayer', BtmLayer)
 import Alert from './element/Alert'
 Vue.component('Alert', Alert)
+import Popup from './element/Popup'
+Vue.component('Popup', Popup)
 import Carousel from './element/Carousel'
 Vue.component('Carousel', Carousel)
 import UpContent from './element/UpContent'

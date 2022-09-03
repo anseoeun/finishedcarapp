@@ -88,11 +88,12 @@ export default {
     setOption() {
       let opt =Object.assign({
         arrows : false,
-        pagination : true
+        pagination : true,
+        drag : false,
       }, this.options)
 
-      if(!this.content && this.data.length <= 1){
-        opt.arrows = false;
+      if(this.data.length > 1){
+        opt.drag = true;
       }
       if(this.options.destroy){
         opt.breakpoints = {
@@ -101,6 +102,7 @@ export default {
           }
         }
       }
+
       return opt;
     }
   },

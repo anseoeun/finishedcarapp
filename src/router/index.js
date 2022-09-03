@@ -18,6 +18,7 @@ const routes = [
 	{ path: '/splash', component: () => import('@/views/Splash.vue')},
 	{ path: '/joinOther', meta: { layout: 'Sub', title:'회원가입' }, component: () => import('@/views/JoinOther.vue')},
 	{ path: '/joinRuleList', meta: { layout: 'Sub', footer: true, title:'회원가입' }, component: () => import('@/views/JoinRuleList.vue')},
+	{ path: '/permissionGrant', component: () => import('@/views/PermissionGrant.vue')},
 	{ path: '/login', component: () => import('@/views/Login.vue')},
 	{ path: '/join', meta: { layout: 'Sub', title:'회원가입'}, component: () => import('@/views/Join.vue')},
 

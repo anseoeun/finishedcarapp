@@ -1,66 +1,36 @@
 <template>
-  <div 
-    v-if="isOpen"
-    :dim="isDim"
-    class="alert-popup">
-      <div class="dim" v-if="isDim"></div>
-      <div class="popup">
-        <!-- <button v-if="close" class="btn-close" @click="$emit('close');"><Icon type="close" /></button>         -->
-          <div v-if="$slots.header" class="pop-header">
-              <div class="pop-tit">
-                <slot name="header" />
-              </div>
-          </div>
-          <div class="pop-body">
-               <div v-if="$slots.body" class="alert-txt">
-                 <slot name="body" />
-               </div>
-
-               <div class="btn-wrap">
-                 <button v-if="confirm" class="btn-type1 st1" @click="$emit('close');$emit('confirm')"><span>확인</span></button>
-                 <slot name="btn" />
-               </div>
-          </div>
-      </div>
-  </div>
+    <Popup :is-open="visible" 
+        :customBtn="true"
+       @close="$emit('close');"
+    >
+        <template slot="header">{{ alert.title }}</template>
+        <template slot="body">
+          <div class="alert-txt" v-html="alert.txt"></div>
+        </template>
+        <template slot="btn">
+          <slot v-if="alert.customBtn" name="btn" />
+          <button class="btn-type1 st1" @click="$emit('close');"><span>확인</span></button>
+          <button class="btn-type1 st2" @click="$emit('close');"><span>취소</span></button>
+        </template>
+    </Popup>    
 </template>
 
 <script>
 export default {
   props: {
-    isOpen:{
+    visible: {
       type: Boolean,
-      default: false
+      default: false  
     },
-    isDim:{
-      type: Boolean,
-      default: true
-    },
-    confirm:{
-      type: Boolean,
-      default: true
-    },
-    close:{
-      type: Boolean,
-      default: true
-    },
+    alert:{
+      type: Object,
+      default: () => {},
+    }
+  },  
+  data(){
+    return{
+
+    }
   },
-  watch:{
-    isOpen(newValue, oldValue) {
-      if (newValue) {
-        document.body.setAttribute('style', 'overflow:hidden')
-      }else if (oldValue){
-        document.body.setAttribute('style', '')
-      }      
-    }    
-  },
-  methods: {
-    onClose() {
-      this.$emit('close')
-    },
-    onCloseDim() {
-      if(this.dimClose) this.$emit('close')
-    },
-  }
 }
 </script>

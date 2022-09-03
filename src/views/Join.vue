@@ -51,7 +51,7 @@
         <div class="txt-error">비밀번호가 일치하지 않습니다.</div>
       </div>
       <!-- 본인정보 -->
-      <h2 class="tit-type1">계정등록</h2>
+      <h2 class="tit-type1">본인정보</h2>
       <div class="grid-box">
         <ul>
           <li>
@@ -61,7 +61,7 @@
                 <div class="auto">
                   <!-- 텍스트들어가야된다면 여기 -->
                 </div>
-                <button class="btn-type4 st1"><span>검색</span></button>
+                <button class="btn-type4 st1" @click="popup.popAddr = true"><span>검색</span></button>
               </div>
             </div>
           </li>
@@ -84,7 +84,7 @@
                 <div class="auto">
                   <!-- 텍스트들어가야된다면 여기 -->
                 </div>
-                <button class="btn-type4 st1"><span>등록</span></button>
+                <button class="btn-type4 st1" @click="popup.popCardRegist=true"><span>등록</span></button>
               </div>
             </div>
           </li>
@@ -107,11 +107,12 @@
                 <div class="auto">
                   <!-- 텍스트들어가야된다면 여기 -->
                 </div>
-                <button class="btn-type4 st1"><span>등록</span></button>
+                <button class="btn-type4 st1" @click="popup.carAuth=true;popup.ownerMismatch=true;"><span>인증</span></button>
               </div>
             </div>
           </li>
         </ul>
+        <div class="txt-success">차량인증이 완료되었습니다.</div>
       </div>
       
       <!-- 지원 프로그램 선택 -->
@@ -155,16 +156,63 @@
         </div>
       </div>
       <div class="btn-wrap">
-        <button v-if="skin === 'polestar'" class="btn-type1 st1"><span>신청하기</span></button>
-        <button v-else class="btn-type1 st1"><span>카드인증 요청</span></button>
+        <button v-if="skin === 'polestar'" class="btn-type1 st1" @click="popup.complete=true"><span>가입완료</span></button>
+        <button v-else class="btn-type1 st1" @click="popup.complete=true"><span>카드인증 요청</span></button>
       </div>
     </div>
+
+     <!-- 팝업:회원인증 -->
+    <Popup :is-open="popup.memAuth" @close="popup.memAuth=false;" >
+        <template slot="header">알림</template>
+        <template slot="body">
+          <div class="alert-txt">
+            발급 받으신 멤버십 카드 번호를
+            <br>꼭 입력하셔야 회원 인증이 가능합니다.
+          </div>
+        </template>
+    </Popup>
+     <!-- 팝업:차량 인증 완료 -->
+    <Popup :is-open="popup.carAuth" @close="popup.carAuth=false;" >
+        <template slot="header">알림</template>
+        <template slot="body"><div class="alert-txt">차량 인증이 완료되었습니다.</div></template>
+    </Popup>    
+     <!-- 팝업:소유자명 불일치 -->
+    <Popup :is-open="popup.ownerMismatch" @close="popup.ownerMismatch=false;" >
+        <template slot="header">소유자명 불일치</template>
+        <template slot="body">
+          <div class="alert-txt">
+            소유자가 일치하지 않습니다.
+            <br>차량정보 등록은 실 소유자만 가능합니다.
+          </div>
+        </template>
+    </Popup>    
+     <!-- 팝업:가입완료 -->
+    <Popup :is-open="popup.complete" @close="popup.complete=false;" >
+        <template slot="header">알림</template>
+        <template slot="body">
+          <div class="alert-txt">
+            회원가입이 완료되었습니다.
+            <br>인증까지는 2~3영업일이 소요됩니다.
+          </div>
+        </template>
+    </Popup>  
+
+    <!-- 팝업:주소검색 -->
+    <PopAddr :visible="popup.popAddr" @close="popup.popAddr = false"/>
+    <!-- 팝업:신용카드 등록 -->
+    <PopCardRegist :visible="popup.popCardRegist" @close="popup.popCardRegist = false"/>
+    
   </div>
 </template>
 
 <script>
-
+import PopAddr from '@/views/PopAddr'
+import PopCardRegist from '@/views/PopCardRegist'
 export default {
+  components:{
+    PopAddr,
+    PopCardRegist,
+  },  
   data(){
     return{
       form: {
@@ -188,11 +236,20 @@ export default {
           value: 'p03',
           label: '충전포인트(15만원)'
         },
-      ]
+      ],
+      
+      popup: {
+        memAuth: false,
+        carAuth: false,
+        ownerMismatch:false,
+        complete:false,
+        popAddr: false,
+        popCardRegist:false,
+      }
     }
   },
-  methods: {
-    
-  }
+  mounted(){
+    this.popup.memAuth = true
+  },
 }
 </script>

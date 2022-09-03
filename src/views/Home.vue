@@ -56,6 +56,7 @@ export default {
           // 스플래시
           'splash': '스플래시',
           // 로그인
+          'permissionGrant': '권한 허용 안내',
           'joinRuleList': '이용약관',
           'login': '로그인',
           'join': '회원가입',
