@@ -6,13 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   // 퍼블리싱 인덱스, 샘플
   { path: '/', meta: { layout: 'None' }, component: () => import('@/views/Home.vue')  },
-  { path: '/sample/carousel', meta: { layout: 'None' }, component: () => import('@/views/sample/Carousel.vue')  },
-  { path: '/sample/component', meta: { layout: 'None' }, component: () => import('@/views/sample/Component.vue')  },
-  { path: '/sample/form', meta: { layout: 'None' }, component: () => import('@/views/sample/Form.vue')  },
-  { path: '/sample/tab', meta: { layout: 'None' }, component: () => import('@/views/sample/Tab.vue')  },
-  { path: '/sample/toggleslide', meta: { layout: 'None' }, component: () => import('@/views/sample/Toggleslide.vue')  },
-  { path: '/sample/card', meta: { layout: 'None' }, component: () => import('@/views/sample/Card.vue')  },
-  { path: '/sample/list', meta: { layout: 'None' }, component: () => import('@/views/sample/List.vue')  },
+
 
   // 로그인
 	{ path: '/splash', component: () => import('@/views/Splash.vue')},
@@ -21,36 +15,41 @@ const routes = [
 	{ path: '/permissionGrant', component: () => import('@/views/PermissionGrant.vue')},
 	{ path: '/login', component: () => import('@/views/Login.vue')},
 	{ path: '/join', meta: { layout: 'Sub', title:'회원가입'}, component: () => import('@/views/Join.vue')},
+	{ path: '/idFind', meta: { layout: 'Sub', title:'아이디 찾기'}, component: () => import('@/views/IdFind.vue')},
+	{ path: '/pwSetting', meta: { layout: 'Sub', title:'비밀번호 초기화'}, component: () => import('@/views/PwSetting.vue')},
 
   // 메인
   { path: '/main', meta: {layout: 'Default', menu:'home' }, component: () => import('@/views/Main.vue')},
+  // 충전상태
+  { path: '/chargeStatus', meta: {layout: 'Sub', title:'충전상태' }, component: () => import('@/views/ChargeStatus.vue')},
+  // 예약현황
+  { path: '/reserveStatus', meta: {layout: 'Sub', title:'예약현황' }, component: () => import('@/views/RserveStatus.vue')},
+
+  // 마이페이지
+  { path: '/myPage', meta: {layout: 'Default', menu:'my' }, component: () => import('@/views/MyPage.vue')},
+
+
+
   //고객센터
   { path: '/cscenter', meta: {layout: 'Default', menu:'cscenter' }, component: () => import('@/views/Cscenter.vue')},
   // 공지사항
-  { path: '/notice', meta: {layout: 'Default', menu:'cscenter' }, component: () => import('@/views/Notice.vue')},
+  { path: '/notice', meta: {layout: 'Sub', footer: true, title:'공지사항', menu:'cscenter' }, component: () => import('@/views/Notice.vue')},
   // FAQ
-  { path: '/faq', meta: {layout: 'Default', menu:'cscenter' }, component: () => import('@/views/Faq.vue')},
+  { path: '/faq', meta: {layout: 'Sub', footer: true, title:'FAQ', menu:'cscenter' }, component: () => import('@/views/Faq.vue')},
   // 1:1문의
-  { path: '/question', meta: {layout: 'Default', menu:'cscenter' }, component: () => import('@/views/Question.vue')},
+  { path: '/question', meta: {layout: 'Sub', footer: true, title:'1:1 문의', menu:'cscenter' }, component: () => import('@/views/Question.vue')},
+  { path: '/questionRegist', meta: {layout: 'Sub', title:'1:1 문의', menu:'cscenter' }, component: () => import('@/views/QuestionRegist.vue')},
+  // 라이센스
+  { path: '/license', meta: {layout: 'Sub', footer: true, title:'라이센스', menu:'cscenter' }, component: () => import('@/views/License.vue')},
 
 
 
-  // 알림
-	{ path: '/alarm', meta: {layout: 'Default', menu:'home' }, component: () => import('@/views/Alarm.vue')},
-  // 충전소
-	{ path: '/chargeStation', meta: {layout: 'Default', menu:'charge' }, component: () => import('@/views/ChargeStation.vue')},
-  // 충전소지도
-	{ path: '/chargemap', meta: {layout: 'Default', menu:'map', layoutClass:"layout-map" }, component: () => import('@/views/ChargeMap.vue')},
-  // 충전소검색
-	{ path: '/chargeSearch', meta: {layout: 'Default', menu:'home' }, component: () => import('@/views/ChargeSearch.vue')},
-  // 충전
-	{ path: '/charge', meta: {layout: 'Default', menu:'charge' }, component: () => import('@/views/Charge.vue')},
-  // 충전중
-	{ path: '/charging', meta: {layout: 'Default', menu:'charge' }, component: () => import('@/views/Charging.vue')},
-  // 신청
-	{ path: '/apply', meta: {layout: 'Default', menu:'apply' }, component: () => import('@/views/Apply.vue')},
-  // 더보기
-	{ path: '/more', meta: {layout: 'Default', menu:'more' }, component: () => import('@/views/More.vue')},
+  //bmw
+  { path: '/joinOther', meta: {layout: 'Sub', title:'회원가입' }, component: () => import('@/views/JoinOther.vue')},
+  { path: '/bmwApps', meta: {layout: 'Default' }, component: () => import('@/views/BmwApps.vue')},
+
+  //polestar
+  { path: '/event', meta: {layout: 'Sub', footer: true, title:'이벤트', menu:'cscenter' }, component: () => import('@/views/Event.vue')},  
 ]
 
 for(let i=0;i<routes.length;i++){

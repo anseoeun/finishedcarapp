@@ -3,7 +3,7 @@
     <div class="board-wrap">
       <h2 class="tit-type1">공지사항</h2>
 
-      <div class="categpru">
+      <div class="category">
         <span class="label">카테고리</span>
         <span class="cate">전체</span>
       </div>

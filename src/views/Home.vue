@@ -27,6 +27,28 @@
           <td></td>
         </template>
       </tr>
+      <template v-if="skin === 'bmw'">
+        <tr v-for="(value, name, index) in bmwList" :key="value">
+          <td v-if="name.includes('title-')" colspan="4" class="title">{{ value }}</td>
+          <template v-else>
+            <td>{{ index + titleNum }}</td>
+            <td>{{ value }}</td>
+            <td><router-link :to="'/'+name">{{ '/'+name }}</router-link></td>
+            <td></td>
+          </template>
+        </tr>
+      </template>
+      <template v-if="skin === 'polestar'">
+        <tr v-for="(value, name, index) in polestarList" :key="value">
+          <td v-if="name.includes('title-')" colspan="4" class="title">{{ value }}</td>
+          <template v-else>
+            <td>{{ index + titleNum }}</td>
+            <td>{{ value }}</td>
+            <td><router-link :to="'/'+name">{{ '/'+name }}</router-link></td>
+            <td></td>
+          </template>
+        </tr>
+      </template>
     </tbody>
   </table>
   </div>
@@ -44,46 +66,58 @@ export default {
       list: {
           'title-sample': '-샘플',        
           //샘플
-          'sample/carousel': '샘플/슬라이드',
-          'sample/component': '샘플/컴포넌트',
-          'sample/form': '샘플/폼요소',
-          'sample/tab': '샘플/탭',
-          'sample/toggleslide': '샘플/토글슬라이드',
-          'sample/card': '샘플/카드',
-          'sample/list': '샘플/리스트',
 
-          'title-login': '-로그인',
+
+          'title-login': '-로그인/회원가입',
           // 스플래시
           'splash': '스플래시',
-          // 로그인
+          // 로그인/회원가입
           'permissionGrant': '권한 허용 안내',
           'joinRuleList': '이용약관',
           'login': '로그인',
           'join': '회원가입',
+          'idFind': '아이디찾기',
+          'pwSetting': '비밀번호초기화',
 
           'title-page': '-페이지',
           // 메인
           'main': '메인',
+          
+          // 충전상태
+          'chargeStatus': '충전상태',
+          // 예약현황
+          'reserveStatus': '예약현황',
+
+          // 마이페이지
+          'myPage': '마이페이지',
+
           // 고객센터
           'cscenter': '고객센터',
           // 공지사항
           'notice': '공지사항',
-          // 알림
-          'alarm': '알림',
-          // 충전소검색
-          'chargeSearch': '충전소검색',
-          // 충전소지도
-          'chargemap': '충전소지도',
-          // 충전소
-          'chargeStation': '충전소',
-          // 충전
-          'charge': '충전',
-          // 충전중
-          'charging': '충전중',
-          // 신청
-          'apply': '신청',       
-          // 더보기
-          'more': '더보기',       
+          // FAQ
+          'faq': 'FAQ',
+          // 1:1 문의
+          'question': '1:1 문의',
+          'questionRegist': '1:1 문의 등록',
+          // 라이센스
+          'license': '라이센스',
+
+
+      },
+      bmwList: {
+          //BMW
+          'title-bmw': '-BMW',
+          // xEV 고객 가입
+          'joinOther': 'xEV 고객 가입',
+          // BMW APPS
+          'bmwApps': 'BMW APPS',
+      },
+      polestarList: {
+          //폴스타
+          'title-polestar': '-POLESTAR',
+          // xEV 고객 가입
+          'event': '이벤트',
       }
     }
   },

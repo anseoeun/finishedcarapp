@@ -4,7 +4,7 @@
         <div class="cont-scroll">
           <!-- 서비스 이용 약관 -->
           <div v-if="gbnSet === 'rule1' " class="rule-wrap">
-            <h2 class="tit-type1">서비스 이용 약관</h2>
+            <h2 class="tit-type2">서비스 이용 약관</h2>
             <div class="rule-contnet">
               <pre>
                 이용약관
@@ -206,7 +206,7 @@
           </div>
           <!-- 개인정보 처리방침 -->
           <div v-if="gbnSet === 'rule2' " class="rule-wrap">
-              <h2 class="tit-type1">개인정보 처리방침</h2>
+              <h2 class="tit-type2">개인정보 처리방침</h2>
             <div class="rule-contnet">
               <pre>
                 개인정보처리방침
@@ -365,7 +365,7 @@
           </div>
           <!-- 위치기반서비스 이용 약관 -->
           <div v-if="gbnSet === 'rule3' " class="rule-wrap">
-              <h2 class="tit-type1">위치기반서비스 이용 약관</h2>
+              <h2 class="tit-type2">위치기반서비스 이용 약관</h2>
             <div class="rule-contnet">
               <pre>
                 위치기반서비스이용약관
@@ -468,7 +468,7 @@
           </div>
           <!-- 휴대폰본인확인서비스 -->
           <div v-if="gbnSet === 'rule4' " class="rule-wrap">
-              <h2 class="tit-type1">휴대폰 본인확인서비스</h2>
+              <h2 class="tit-type2">휴대폰 본인확인서비스</h2>
             <div class="rule-contnet">
               <pre>
                 신규작성 필요

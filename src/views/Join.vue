@@ -2,7 +2,7 @@
   <div class="contents">
     <div class="join-wrap">
       <!-- 본인인증 -->
-      <h2 class="tit-type1">본인인증</h2>
+      <h2 class="tit-type2">본인인증</h2>
       <div class="grid-box">
         <ul>
           <li>
@@ -26,7 +26,7 @@
         <div class="txt-success">인증이 완료되었습니다.</div>
       </div>
       <!-- 계정등록 -->
-      <h2 class="tit-type1">계정등록</h2>
+      <h2 class="tit-type2">계정등록</h2>
       <div class="grid-box">
         <ul>
           <li>
@@ -51,7 +51,7 @@
         <div class="txt-error">비밀번호가 일치하지 않습니다.</div>
       </div>
       <!-- 본인정보 -->
-      <h2 class="tit-type1">본인정보</h2>
+      <h2 class="tit-type2">본인정보</h2>
       <div class="grid-box">
         <ul>
           <li>
@@ -91,7 +91,7 @@
         </ul>
       </div>
       <!-- 차량정보 -->
-      <h2 class="tit-type1">차량정보</h2>
+      <h2 class="tit-type2">차량정보</h2>
       <div class="grid-box">
         <ul>
           <li>
@@ -116,7 +116,7 @@
       </div>
       
       <!-- 지원 프로그램 선택 -->
-      <h2 class="tit-type1">지원 프로그램 선택</h2>
+      <h2 class="tit-type2">지원 프로그램 선택</h2>
       <div class="support-program-wrap">
         <div class="check-wrap">
           <template v-if="skin === 'polestar'">

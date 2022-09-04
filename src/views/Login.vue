@@ -31,12 +31,14 @@
     </div>
     
      <!-- 팝업:이메일안내 -->
-    <Popup :is-open="popup.emailCheck" 
-      @close="popup.emailCheck=false;"
-    >
+    <Popup :is-open="popup.emailCheck" @close="popup.emailCheck=false;">
         <template slot="header">알림</template>
         <template slot="body">
           <div class="alert-txt">아이디는 이메일 형식이어야 합니다.</div>
+        </template>
+        <template slot="btn">
+          <button class="btn-type1 st1" @click="$emit('close');"><span>확인</span></button>
+          <button class="btn-type1 st2" @click="$emit('close');"><span>취소</span></button>
         </template>
     </Popup>
     <!-- 팝업:아이디비밀번호안내 -->

@@ -17,6 +17,16 @@ export default {
         if(this.skin === 'benz') return ''
         if(this.skin === 'polestar') return '이용 약관 동의'
       }
+      if(this.$route.path === '/chargeStatus') { //충전상태
+        if(this.skin === 'bmw') return '충전상태'
+        if(this.skin === 'benz') return '즉시충전'
+        if(this.skin === 'polestar') return '즉시충전'
+      }
+      if(this.$route.path === '/reserveStatus') { //예약현황
+        if(this.skin === 'bmw') return '예약현황'
+        if(this.skin === 'benz') return '예약내역'
+        if(this.skin === 'polestar') return '예약내역'
+      }
       return this.$root.$route.meta.title ? this.$root.$route.meta.title : ''
     },
   },

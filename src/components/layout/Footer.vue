@@ -4,7 +4,7 @@
            <router-link to="/" class="menu" :class="{ on : menu === 'home' }">
             <span class="icon"><Icon type="foot-home" class="off" /><Icon type="foot-home-on" class="on" /></span><span v-if="skin != 'benz'" class="txt">HOME</span>
            </router-link>
-           <router-link to="/" class="menu" :class="{ on : menu === 'charge' }">
+           <router-link to="/" class="menu" :class="{ on : menu === 'my' }">
             <span class="icon"><Icon type="foot-my" class="off" /><Icon type="foot-my-on" class="on" /></span>
             <span v-if="skin === 'bmw'" class="txt">마이차지비</span>
             <span v-if="skin === 'polestar'" class="txt">마이페이지</span>
