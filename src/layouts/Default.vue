@@ -40,9 +40,6 @@ export default {
       layoutClass(){
         return this.$root.$route.meta.layoutClass ? this.$root.$route.meta.layoutClass : 'layout-default'
       },
-      footer(){
-        return this.$root.$route.meta.footer ? this.$root.$route.meta.footer : false
-      },      
     }, 
 }
 </script>

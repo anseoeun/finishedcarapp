@@ -3,7 +3,7 @@
     v-if="isOpen"
     :dim="isDim"
     class="popup-wrap">
-      <div class="dim" v-if="isDim" @click="dimClose ? $emit('close') : ''"></div>
+      <div class="dim" v-if="isDim" @click="onCloseDim"></div>
       <div class="popup">
         <!-- <button v-if="close" class="btn-close" @click="$emit('close');"><Icon type="close" /></button>         -->
           <div v-if="$slots.header" class="pop-header">

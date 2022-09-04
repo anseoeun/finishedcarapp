@@ -3,24 +3,11 @@
     <div v-if="skin === 'bmw'" class="join-other-wrap">
       <div class="logo"></div>
       
-      <div class="link-box">
+      <a href="javascript:void(0)" class="link-box">
         <strong>BMW CHARGING</strong>
         <span>xEV 고객 가입</span>
-      </div>
+      </a>
         
     </div>
   </div>
 </template>
-
-<script>
-
-export default {
-  data(){
-    return{
-    }
-  },
-  methods: {
-
-  }
-}
-</script>

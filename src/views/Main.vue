@@ -105,27 +105,20 @@
     <!-- // main-wrap -->
 
      <!-- 팝업:이미지보기 -->
-    <Popup :is-open="popup.view"  :dimClose="true"
-      class="img-view"
-      @close="popup.view=false;"
-    >
+    <Popup :is-open="popup.view"  :dimClose="true" class="img-view" @close="popup.view=false;">
         <template slot="body">
           <img :src="bannerSrc" alt="">
         </template>
     </Popup>    
      <!-- 팝업:업데이트로그인 -->
-    <Popup :is-open="popup.update" 
-      @close="popup.update=false;"
-    >
+    <Popup :is-open="popup.update" @close="popup.update=false;">
         <template slot="header">알림</template>
         <template slot="body">
           <div class="alert-txt">업데이트 된 앱 로그인시<br>차량인증이 필요합니다.</div>
         </template>
     </Popup>    
      <!-- 팝업:충전중아님 -->
-    <Popup :is-open="popup.nocharge" 
-      @close="popup.nocharge=false;"
-    >
+    <Popup :is-open="popup.nocharge" @close="popup.nocharge=false;">
         <template slot="header">알림</template>
         <template slot="body">
           <div class="alert-txt">충전중이 아닙니다.</div>

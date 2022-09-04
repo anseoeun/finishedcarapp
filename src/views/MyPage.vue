@@ -7,17 +7,14 @@
           <template v-else>마이차지비</template>
         </h2>
         
-        <Carousel class="slide-list" :class="{'no-slide':cardList.length <= 1}" :data="cardList" :options="cardSliderOpt">
+        <Carousel class="slide-list" :class="{'no-slide':cardList.length <= 1}" :data="cardList" :delay="true" :options="cardSliderOpt">
           <template slot-scope="props">
             <div class="card" :class="{on: props.item.selected}">
                 <div class="card-img" :style="'background-image:url('+props.item.src+')'"></div>
                 <div class="card-num">
-                    <div class="tit">카드번호 : </div>
+                    <div class="tit">카드번호 :&nbsp;</div>
                     <div class="num">
-                      <span>{{ props.item.num[0] }}</span> -
-                      <span>{{ props.item.num[1] }}</span> -
-                      <span>{{ props.item.num[2] }}</span> -
-                      <span>{{ props.item.num[3] }}</span>
+                      <span>{{ props.item.num[0] }}</span>-<span>{{ props.item.num[1] }}</span>-<span>{{ props.item.num[2] }}</span>-<span>{{ props.item.num[3] }}</span>
                     </div>
                 </div>
             </div>
