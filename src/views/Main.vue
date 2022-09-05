@@ -104,6 +104,13 @@
     </div>
     <!-- // main-wrap -->
 
+     <!-- 팝업:로그인필요 -->
+    <Popup :is-open="popup.login" @close="popup.login=false;">
+        <template slot="header">알림</template>
+        <template slot="body">
+          <div class="alert-txt">로그인 후 이용가능합니다.</div>
+        </template>
+    </Popup>    
      <!-- 팝업:이미지보기 -->
     <Popup :is-open="popup.view"  :dimClose="true" class="img-view" @close="popup.view=false;">
         <template slot="body">
@@ -142,6 +149,7 @@ export default {
       },
       bannerSrc :'',
       popup: {
+        login: false,
         view: false,
         update: false,
         nocharge: false,
@@ -163,6 +171,7 @@ export default {
     }
   },
   mounted(){
+    this.popup.login = true
     this.popup.update = true
   }
 }

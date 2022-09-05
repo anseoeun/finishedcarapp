@@ -138,9 +138,6 @@ input[type=text], input[type=password], input[type=number], textarea {
 .inp-check .ic{display:inline-block;overflow:hidden;width:1.4rem;height:1.4rem;border:1px solid $c-base;border-radius:0.2rem;background:#fff;}
 .inp-check input:checked  ~ .ic{background: url($check-on) no-repeat 50% 50%;background-size:1rem 0.9rem;}
 .inp-check .t{display:inline-block;padding-left:0.8rem;vertical-align:middle;font-size:1.4rem;}
-// .inp-check input:disabled  ~ .ic{background:#f0f0f0;}
-// .inp-check input:disabled,
-// .inp-check input:disabled ~ *{cursor: default !important;}
 .inp-check.st2 .t{font-size:1.2rem;}
 @if($skin == 'bmw'){
   .inp-check.st2 .ic{border:none;}
@@ -186,11 +183,11 @@ i[class*=i-] .svg-prevent{position:absolute;top:0;left:0;z-index: 1;width:100%;h
 [class*=btn-type] i:first-child { margin-right: 0.8rem;}
 [class*=btn-type] i:last-child { margin-left: 0.8rem;}
 
-.btn-type1 {position:relative;overflow:hidden;display: block;height: 4.8rem;font-size: 1.2rem;line-height: 4.8rem;}
+.btn-type1 {position:relative;overflow:hidden;display: block;height: 4.8rem;font-size: 1.2rem;line-height: 4.6rem;}
 .btn-type1 span{display:block;padding: 0 1.6rem;}
-.btn-type2 {position:relative;overflow:hidden;display: inline-block;height: 4rem;font-size: 1.2rem;line-height: 4rem;}
-.btn-type3 {position:relative;overflow:hidden;display: inline-block;height: 3.2rem;font-size: 1.2rem;line-height: 3.2rem;}
-.btn-type4 { display: inline-block;width:auto !important;height: 2.4rem;font-size: 1.2rem;line-height: 2.4rem;}
+.btn-type2 {position:relative;overflow:hidden;display: inline-block;height: 4rem;font-size: 1.2rem;line-height: 3.8rem;}
+.btn-type3 {position:relative;overflow:hidden;display: inline-block;height: 3.2rem;font-size: 1.2rem;line-height: 3rem;}
+.btn-type4 { display: inline-block;width:auto !important;height: 2.4rem;font-size: 1.2rem;line-height: 2.2rem;}
 .btn-type4 span{display:block;padding: 0 1rem;}
 @if($skin != 'polestar'){
   .btn-type1{border-radius:0.8rem;}
@@ -446,12 +443,11 @@ i[class*=i-] .svg-prevent{position:absolute;top:0;left:0;z-index: 1;width:100%;h
 .login-wrap .login-box .login-menu ul{display:flex;flex-direction:row;align-items:center;justify-content: center;}
 .login-wrap .login-box .login-menu ul li{position:relative;font-size:1.1rem;display:inline-block;}
 .login-wrap .login-box .login-menu ul li ~ li{padding-left:1.5rem;margin-left:1.4rem;}
-.login-wrap .login-box .login-menu ul li ~ li:after{content:'';display:block;width:1px;height:1rem;background:$c-base;position:absolute;top:40%;left:0;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
+.login-wrap .login-box .login-menu ul li ~ li:after{content:'';display:block;width:1px;height:1rem;background:$c-base;position:absolute;top:50%;left:0;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
 .login-wrap .login-box .login-menu ul li button,
-.login-wrap .login-box .login-menu ul li a{display:inline-block;width:auto;letter-spacing: 0.05em;}
-.login-wrap .login-box .login-menu ul li span{display:inline-block;position:relative;}
-.login-wrap .login-box .login-menu ul li span ~ span{padding-left:0.8rem;margin-left:0.7rem;}
-.login-wrap .login-box .login-menu ul li span ~ span:after{content:'';display:block;background:$c-base;height:0.2rem;width:0.2rem;border-radius:1.1rem;position:absolute;top:40%;left:0;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
+.login-wrap .login-box .login-menu ul li .btn{display:inline-block;width:auto;letter-spacing: 0.05em;position:relative;}
+.login-wrap .login-box .login-menu ul li .btn ~ .btn{padding-left:0.8rem;margin-left:0.7rem;}
+.login-wrap .login-box .login-menu ul li .btn ~ .btn:after{content:'';display:block;background:$c-base;height:0.2rem;width:0.2rem;border-radius:1.1rem;position:absolute;top:50%;left:0;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
 .login-wrap .login-box{width:29.5rem;margin:0 auto;padding:3rem 1.6rem;background: rgba(255, 255, 255, 0.8);border-radius: 0.8rem;}
 .login-wrap .login-box > ul li ~ li{margin-top:0.8rem;}
 .login-wrap .login-box > ul li .inp{padding-left:5.4rem;}

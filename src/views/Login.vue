@@ -22,8 +22,8 @@
           </div>
           <div class="login-menu">
             <ul>
-              <li><router-link to="/">회원가입</router-link></li>
-              <li><button><span>아이디찾기</span><span>비밀번호 찾기</span></button></li>
+              <li><router-link to="/" class="btn">회원가입</router-link></li>
+              <li><router-link to="/" class="btn">아이디찾기</router-link><router-link to="/" class="btn">비밀번호 찾기</router-link></li>
             </ul>
           </div>
         </div>
