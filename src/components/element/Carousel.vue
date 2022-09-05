@@ -4,7 +4,6 @@
       ref="slider"
       class="slider"
       :options="setOption"
-      :style={opacity:opacity}
       @splide:mounted="init"
       @splide:move="onMove"
       @splide:moved="onMoved"
@@ -50,10 +49,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    delay:{
-      type: Boolean,
-      default: false,
-    },
   },
   
   data() {
@@ -86,13 +81,13 @@ export default {
   },
   methods: {
     init(slider) {
-      if(this.delay){
-        setTimeout(()=>{
-          this.opacity = 1
-        }, 200)
-      }else{
-        this.opacity = 1
-      }
+      setTimeout(()=>{
+        if(this.setOption.focus === 'center') {
+          let w = this.$refs.slider.$el.querySelector('.splide__slide').clientWidth;
+          this.$refs.slider.$el.querySelector('.splide__list').setAttribute('style', 'transform: translateX(calc(50vw - '+ (w/2) +'px))')
+        }
+      }, 10);
+
       this.$emit('init', slider);
     },
     onMove(slider, index){

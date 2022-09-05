@@ -27,6 +27,8 @@ const routes = [
 
   // 마이페이지
   { path: '/myPage', meta: {layout: 'Default', menu:'my' }, component: () => import('@/views/MyPage.vue')},
+  // 카드상세및혜택
+  { path: '/cardService', meta: {layout: 'Sub', title:'BMW Charging 서비스', menu:'my' }, component: () => import('@/views/CardService.vue')},
 
 
 

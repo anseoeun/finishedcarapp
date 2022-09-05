@@ -112,6 +112,8 @@ export default {
           'joinOther': 'xEV 고객 가입',
           // BMW APPS
           'bmwApps': 'BMW APPS',
+          // 카드상세및혜택
+          'cardService': '카드상세및혜택',          
       },
       polestarList: {
           //폴스타
