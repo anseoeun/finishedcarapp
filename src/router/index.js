@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   // 퍼블리싱 인덱스, 샘플
   { path: '/', meta: { layout: 'None' }, component: () => import('@/views/Home.vue')  },
-
+  { path: '/sample/form', meta: { layout: 'None' }, component: () => import('@/views/sample/Form.vue')  },
 
   // 로그인
 	{ path: '/splash', component: () => import('@/views/Splash.vue')},
