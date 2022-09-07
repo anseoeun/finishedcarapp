@@ -31,9 +31,9 @@
                   </button>
               </div>
               <div v-if="item.tit !== '이메일 / SMS 정보수집 동의'" class="right">
-                <router-link :to="item.link" class="bth-link">
+                <button class="bth-link"  @click="btmLayer.popNoticeDetail = true">
                   <Icon type="arr-right" />
-                </router-link>
+                </button>
               </div>
             </div>
           </div>
@@ -42,12 +42,17 @@
           <button class="btn-type1 st1" @click="alertPop = true"><span>동의</span></button>
         </div>
     </div>
+    <!-- 공지 상세내역 -->
+    <PopNoticeDetail :visible="btmLayer.popNoticeDetail" @close="btmLayer.popNoticeDetail = false"/>    
   </div>
 </template>
 
 <script>
-
+import PopNoticeDetail from '@/views/PopNoticeDetail'
 export default {
+  components:{
+    PopNoticeDetail
+  },
   data(){
     return{
       ruleChecked: new Array(4).fill(false),
@@ -69,6 +74,10 @@ export default {
           link: '/'
         }
       ],
+
+      btmLayer:{
+        popNoticeDetail: false,
+      },      
     }
   },
   methods: {

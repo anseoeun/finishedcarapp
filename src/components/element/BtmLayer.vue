@@ -39,7 +39,7 @@ export default {
         if (newVisible) {
             setTimeout(()=>{
               $('body').css('overflow', 'hidden');
-              $(layerwrap).slideDown(150);
+              $(layerwrap).fadeIn(300);
               setTimeout(()=>{
                 $(layer).slideDown(180, function(){
                   this.$emit('opended')
@@ -146,10 +146,10 @@ export default {
         const layerwrap = this.$refs.layerwrap
         const layer = this.$refs.layer
 
-        $(layerwrap).slideUp(200)
-        $(layerwrap).fadeOut()
+       
         $(layer).slideUp(150, ()=>{
           $(layer).css('bottom', 0)
+          $(layerwrap).fadeOut(300)
         })
         $('body').css('overflow', '');
       }      
