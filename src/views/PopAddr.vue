@@ -1,6 +1,5 @@
 <template>
     <Popup :is-open="visible" 
-        :customBtn="true"
        @close="$emit('close');"
     >
         <template slot="header">주소검색</template>
@@ -29,7 +28,7 @@
 
         </template>
         <template slot="btn">
-          <button class="btn-type1 st1" @click="$emit('close');"><span>확인</span></button>
+          <button class="btn-type1 st1" @click="confirm();"><span>확인</span></button>
           <button class="btn-type1 st2" @click="$emit('close');"><span>취소</span></button>
         </template>        
     </Popup>    
@@ -47,7 +46,7 @@ export default {
     return{
       form: {
         addr: '',
-        addrdetail: ''
+        addrdetail: '',
       },
       resultShow: false,
       addrList: [
@@ -63,5 +62,13 @@ export default {
       ],
     }
   },
+  methods: {
+    confirm(){
+      this.$emit('confirm', this.form);
+      this.form.addr = "";
+      this.form.addrdetail = "";
+      this.$emit('close');
+    }
+  }
 }
 </script>

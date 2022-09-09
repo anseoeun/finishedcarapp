@@ -17,10 +17,14 @@
     </div>
 
      <!-- 팝업:챗봇 -->
-    <Popup :is-open="popup.chatbot" :customBtn="true" @close="popup.chatbot=false;">
+    <Popup :is-open="popup.chatbot" @close="popup.chatbot=false;">
         <template slot="header">알림</template>
         <template slot="body">
           <div class="alert-txt">챗봇 서비스를 사용하시겠습니까?</div>
+        </template>
+        <template slot="btn">
+          <button class="btn-type1 st1" @click="popup.chatbot=false;"><span>확인</span></button>
+          <button class="btn-type1 st2" @click="popup.chatbot=false;"><span>취소</span></button>
         </template>
     </Popup>    
   </div>

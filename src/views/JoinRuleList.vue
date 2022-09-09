@@ -31,7 +31,7 @@
                   </button>
               </div>
               <div v-if="item.tit !== '이메일 / SMS 정보수집 동의'" class="right">
-                <button class="bth-link"  @click="btmLayer.popNoticeDetail = true">
+                <button class="bth-link" @click="popRule('rule'+(index + 1));">
                   <Icon type="arr-right" />
                 </button>
               </div>
@@ -42,16 +42,16 @@
           <button class="btn-type1 st1" @click="alertPop = true"><span>동의</span></button>
         </div>
     </div>
-    <!-- 공지 상세내역 -->
-    <PopNoticeDetail :visible="btmLayer.popNoticeDetail" @close="btmLayer.popNoticeDetail = false"/>    
+    <!-- 약관 상세내역 -->
+    <PopRuleDetail :visible="btmLayer.popRuleDetail" :gbn.sync="ruleGbn" @close="btmLayer.popRuleDetail = false"/>    
   </div>
 </template>
 
 <script>
-import PopNoticeDetail from '@/views/PopNoticeDetail'
+import PopRuleDetail from '@/views/PopRuleDetail'
 export default {
   components:{
-    PopNoticeDetail
+    PopRuleDetail
   },
   data(){
     return{
@@ -74,9 +74,10 @@ export default {
           link: '/'
         }
       ],
+      ruleGbn: '',
 
       btmLayer:{
-        popNoticeDetail: false,
+        popRuleDetail: false,
       },      
     }
   },
@@ -88,6 +89,10 @@ export default {
         this.$set(this.ruleChecked, i, check);
       }
     },
+    popRule(index){
+      this.ruleGbn = index;
+      this.btmLayer.popRuleDetail = true;
+    }    
   }
 }
 </script>

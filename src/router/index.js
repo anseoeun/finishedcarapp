@@ -24,9 +24,15 @@ const routes = [
   { path: '/chargeStatus', meta: {layout: 'Sub', title:'충전상태' }, component: () => import('@/views/ChargeStatus.vue')},
   // 예약현황
   { path: '/reserveStatus', meta: {layout: 'Sub', title:'예약현황' }, component: () => import('@/views/RserveStatus.vue')},
+  // 홈충전솔루션신청
+  { path: '/apply', meta: {layout: 'Sub', title:'홈충전솔루션 신청' }, component: () => import('@/views/Apply.vue')},
+  // 홈충전솔루션신청-결제
+  { path: '/applyPayment', meta: {layout: 'Sub', title:'홈충전솔루션 신청' }, component: () => import('@/views/ApplyPayment.vue')},
 
   // 마이페이지
   { path: '/myPage', meta: {layout: 'Default', menu:'my' }, component: () => import('@/views/MyPage.vue')},
+  // 내정보
+  { path: '/myInfo', meta: { layout: 'Sub', title:'내정보'}, component: () => import('@/views/MyInfo.vue')},
   // 카드상세및혜택
   { path: '/cardService', meta: {layout: 'Sub', title:'BMW Charging 서비스', menu:'my' }, component: () => import('@/views/CardService.vue')},
 

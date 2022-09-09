@@ -5,6 +5,7 @@ $skin: 'polestar';
 $c-base : #53565A;
 $c-point:#FF7500;
 $c-placeholder: #ccc;
+
 $bg-body:#fff;
 $btn-st1-bg: #53565A;
 $btn-st1-br: 1px solid #53565A;
@@ -13,22 +14,27 @@ $c-header-title: #53565A;
 $check-on: "data:image/svg+xml,%3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4 8L9 1' stroke='%23FF7500'/%3E%3C/svg%3E%0A";
 
 @font-face {
-  font-family: "NotoSans";
-  src: url("~@/assets/fonts/NotoSans-Bold.woff") format("woff"), url("~@/assets/fonts/NotoSans-Bold.otf") format("truetype");
+  font-family: "PolestarUnica77TT";
+  src: url("~@/assets/fonts/PolestarUnica77TT-Bold.woff") format("woff"), 
+       url("~@/assets/fonts/PolestarUnica77TT-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: "NotoSans";
-  src: url("~@/assets/fonts/NotoSans-Medium.woff") format("woff"), url("~@/assets/fonts/NotoSans-Medium.otf") format("truetype");
+  font-family: "PolestarUnica77TT";
+  src: url("~@/assets/fonts/PolestarUnica77TT-Medium.woff") format("woff"), 
+       url("~@/assets/fonts/PolestarUnica77TT-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: "NotoSans";
-  src: url("~@/assets/fonts/NotoSans-Regular.woff") format("woff"), url("~@/assets/fonts/NotoSans-Regular.otf") format("truetype");
+  font-family: "PolestarUnica77TT";
+  src: url("~@/assets/fonts/PolestarUnica77TT-Regular.woff") format("woff"), 
+       url("~@/assets/fonts/PolestarUnica77TT-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
+
+body{font-family:"PolestarUnica77TT", "Sans-serif";}
 
 @import 'style';

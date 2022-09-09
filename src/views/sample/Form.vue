@@ -111,11 +111,11 @@
           <div class="cell auto">
             <div class="f-wrap">
               <div class="auto">
-                <div class="row"><Input type="text" v-model="form.email" placeholder="E-MAIL을 입력하세요" /></div>
-                <div class="row"><Input type="text" v-model="form.email" placeholder="E-MAIL을 입력하세요" /></div>
-                <div class="row"><Input type="text" v-model="form.email" placeholder="E-MAIL을 입력하세요" /></div>
+                <div class="row"><Input type="text" v-model="form.pw" placeholder="현재비밀번호" /></div>
+                <div class="row"><Input type="text" v-model="form.newpw" placeholder="새 비밀번호" /></div>
+                <div class="row"><Input type="text" v-model="form.newpwcheck" placeholder="새 비밀번호 확인" /></div>
               </div>
-              <button class="btn-type4 st1"><span>인증</span></button>
+              <button class="btn-type4 st1"><span>수정</span></button>
             </div>
           </div>
         </li>

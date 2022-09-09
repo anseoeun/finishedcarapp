@@ -1,6 +1,5 @@
 <template>
     <Popup :is-open="visible" 
-       :customBtn="true"
        @close="$emit('close');"
     >
         <template slot="header">신용카드 등록</template>

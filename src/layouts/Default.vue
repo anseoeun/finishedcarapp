@@ -5,7 +5,7 @@
         <Footer />
 
       <!-- 팝업:로그아웃 -->
-      <Popup :is-open="popup.logout" :customBtn="true"
+      <Popup :is-open="popup.logout"
         @close="popup.logout=false;"
       >
           <template slot="header">알림</template>

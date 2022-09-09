@@ -88,8 +88,15 @@ export default {
           // 예약현황
           'reserveStatus': '예약현황',
 
+          //홈충전솔루션신청
+          'applyIndex': '홈충전솔루션신청',
+          'apply': '홈충전솔루션신청',
+          'applyPayment': '홈충전솔루션신청-걸제',
+
           // 마이페이지
           'myPage': '마이페이지',
+          // 내정보
+          'myInfo': '내정보',
 
           // 고객센터
           'cscenter': '고객센터',

@@ -5,8 +5,21 @@
       :class="{on:visible}"
      >
       <div ref="layer" class="btm-layer" style="display:none">
+          <template v-if="$slots.header">
+              <div class="layer-header">
+                <button class="btn-header-close" @click="$emit('close');"><Icon type="back" /></button>
+                <div class="title">
+                  <slot ref="header" name="header" />
+                </div>
+              </div>
+          </template>
           <template>
               <slot ref="content" name="content" />
+          </template>
+          <template v-if="$slots.footer">
+              <div class="layer-footer">
+                <slot ref="footer" name="footer" />
+              </div>
           </template>
       </div>
     </div>
@@ -47,9 +60,8 @@ export default {
                 }.bind(this));
               },180)
 
-              if(layer.querySelector('.splide__slide') || layer.querySelector('.cont-scroll')){
-                let wrapper = layer.querySelector('.splide__slide') ? layer.querySelector('.splide__slide')
-                  : layer.querySelector('.cont-scroll') ? layer.querySelector('.cont-scroll') : ''
+              if(layer.querySelector('.cont-scroll')){
+                let wrapper = layer.querySelector('.cont-scroll')
 
                 wrapper.addEventListener("scroll", (e)=>{
                   if(e.target.scrollTop <= 0){
@@ -81,12 +93,11 @@ export default {
         let over = 100;
         let close = false;
         let moveY = null;
-        let flag = false        
+        let flag = false;
 
         function touchMove(){
           let e = window.event;
-            if(e.target != layerwrap && this.isScrolling) return
-            if($(layer).find('.splide.slider').hasClass('ing')) return;
+            if(e.target.closest('.cont-scroll') && this.isScrolling) return
 
             let touch = e.touches[0];
 
@@ -139,8 +150,8 @@ export default {
         }
 
         layerwrap.addEventListener("touchstart", touchStart, true);
-        layerwrap.addEventListener("touchmove",touchMove.bind(this), true);
-        layerwrap.addEventListener("touchend",touchEnd.bind(this), true);
+        layerwrap.addEventListener("touchmove", touchMove.bind(this), true);
+        layerwrap.addEventListener("touchend", touchEnd.bind(this), true);
       },
       closeLayer(){
         const layerwrap = this.$refs.layerwrap

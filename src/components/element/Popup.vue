@@ -12,14 +12,15 @@
               </div>
           </div>
           <div class="pop-body">
-               <template v-if="$slots.body">
-                 <slot name="body" />
-               </template>
-
-               <div class="btn-wrap">
-                 <slot v-if="customBtn" name="btn" />
-                 <button v-else class="btn-type1 st1" @click="$emit('close');$emit('confirm')"><span>확인</span></button>
-               </div>
+              <template v-if="$slots.body">
+                <slot name="body" />
+              </template>
+          </div>
+          <div class="pop-footer">
+              <div class="btn-wrap">
+                <slot v-if="$slots.btn" name="btn" />
+                <button v-else class="btn-type1 st1" @click="$emit('close');$emit('confirm')"><span>확인</span></button>
+              </div>
           </div>
       </div>
   </div>

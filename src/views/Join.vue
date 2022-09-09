@@ -58,17 +58,15 @@
             <div class="cell label">주소</div>
             <div class="cell auto">
               <div class="f-wrap">
-                <div class="auto">
-                  <!-- 텍스트들어가야된다면 여기 -->
-                </div>
-                <button class="btn-type4 st1" @click="popup.popAddr = true"><span>검색</span></button>
+                <div class="auto">{{ form.addr }}</div>
+                <button class="btn-type4 st1" @click="popup.popAddr=true"><span>검색</span></button>
               </div>
             </div>
           </li>
           <li>
             <div class="cell label">상세주소</div>
             <div class="cell auto">
-              <Input type="text" v-model="form.addr" />
+              <Input type="text" v-model="form.addrdetail" />
             </div>
           </li>
           <li>
@@ -198,9 +196,9 @@
     </Popup>  
 
     <!-- 팝업:주소검색 -->
-    <PopAddr :visible="popup.popAddr" @close="popup.popAddr = false"/>
+    <PopAddr :visible="popup.popAddr" @confirm="addrConfirm" @close="popup.popAddr=false"/>
     <!-- 팝업:신용카드 등록 -->
-    <PopCardRegist :visible="popup.popCardRegist" @close="popup.popCardRegist = false"/>
+    <PopCardRegist :visible="popup.popCardRegist" @close="popup.popCardRegist=false"/>
     
   </div>
 </template>
@@ -220,6 +218,7 @@ export default {
         pw: '',
         pwcheck: '',
         addr: '',
+        addrdetail: '',
         memcard: ''
       },
       supportProgram: '',
@@ -251,5 +250,11 @@ export default {
   mounted(){
     this.popup.memAuth = true
   },
+  methods: {
+    addrConfirm(form){
+      this.form.addr = form.addr;
+      this.form.addrdetail = form.addrdetail;
+    }
+  }
 }
 </script>
