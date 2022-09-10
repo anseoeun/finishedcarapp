@@ -73,7 +73,16 @@
         <svg v-if="skin === 'polestar'" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M7.86805e-07 5.5L10 5.5M10 5.5L5.71429 0.999999M10 5.5L5.71429 10" stroke="#FF7500"/> </svg>
         <svg v-else width="11" height="17" viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M1 0.75L9 8.25L1 16.25" stroke="black" stroke-width="2"/> </svg>
     </i>
-
+    <i v-else-if="type === 'cal-prev'" :class="cls"><svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M15 0.5L2 7L15 13.5" stroke="#111F42"/> </svg> </i>
+    <i v-else-if="type === 'cal-next'" :class="cls"><svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M1 0.5L14 7L1 13.5" stroke="#111F42"/> </svg> </i>
+    <i v-else-if="type === 'arr-using'" :class="cls">
+        <svg v-if="skin !== 'bmw'" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M7.86805e-07 5L10 5M10 5L5.71429 0.499999M10 5L5.71429 9.5" stroke="#FF7500"/> </svg>
+        <svg v-else width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M7.86805e-07 5L10 5M10 5L5.71429 0.499999M10 5L5.71429 9.5" stroke="#2A64AB"/> </svg>
+    </i>
+    <i v-else-if="type === 'arr-using-link'" :class="cls">
+        <svg v-if="skin !== 'polestar'" width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M1 1.25L9 8.75L1 16.75" stroke="black" stroke-width="2"/> </svg>
+        <svg v-else width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M7.86805e-07 5L10 5M10 5L5.71429 0.499999M10 5L5.71429 9.5" stroke="#FF7500"/> </svg>
+    </i>
 </template>
 <script>
 export default {

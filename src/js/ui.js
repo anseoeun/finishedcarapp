@@ -1,6 +1,10 @@
 import Vue from 'vue'
 // import $ from 'jquery'
 
+Vue.filter("fillzero", function (val) {
+  return val < 10 ? '0'+val : val;
+});
+
 Vue.mixin({
     data(){
       return {

@@ -6,6 +6,7 @@
     :disabled="disabled"
     :maxlength="maxlength" 
     :autocomplete="autocomplete"    
+    @focus="onFocus"
     @input="onInput"
     :oninput="maxLength(maxlength)"
   >
@@ -40,6 +41,9 @@ export default {
     },
   },
   methods: {
+    onFocus() {
+      this.$emit('focus')
+    },    
     onInput(e) {
       let value =  e.target.value
       let max = parseInt(this.maxlength)

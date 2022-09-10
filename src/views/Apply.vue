@@ -89,10 +89,8 @@
             <div class="cell label">방문 요청일</div>
             <div class="cell auto">
               <div class="f-wrap">
-                <div class="auto">
-                  <!-- 텍스트들어가야된다면 여기 -->
-                </div>
-                <button class="btn-type4 st1" @click="popup.popCalendar=true"><span>선택</span></button>
+                <div class="auto">{{ visitDay }}</div>
+                <button class="btn-type4 st1" @click="popup.popCalendar=true"><span v-if="visitDay === ''">선택</span><span v-else>변경</span></button>
               </div>
             </div>
           </li>
@@ -102,7 +100,7 @@
         <ul>
           <li>
             <div class="cell label">방문 요청일</div>
-            <div class="cell auto">2022. 09. 03</div>
+            <div class="cell auto">{{ visitDay }}</div>
           </li>
         </ul>
       </div>
@@ -196,7 +194,7 @@
     <!-- 팝업:주소검색 -->
     <PopAddr :visible="popup.popAddr" @confirm="addrConfirm" @close="popup.popAddr=false"/>
     <!-- 팝업:캘린더 -->
-    <PopCalendar :visible="popup.popCalendar" @close="popup.popCalendar=false"/>
+    <PopCalendar :visible="popup.popCalendar" :selectedDay="visitDay" :disabledDate="disabledDate"  @confirm="calendarConfirm" @close="popup.popCalendar=false"/>
   </div>
 </template>
 
@@ -249,6 +247,19 @@ export default {
           label: '옵션3'
         }
       ],
+      visitDay: '',
+      disabledDate: [
+        "2022-9-15",
+        "2022-9-25",
+        "2022-10-8",
+        "2022-10-10",
+        "2022-10-11",
+        "2022-10-12",
+        "2022-10-15",
+        "2022-10-25",
+        "2022-11-15",
+        "2022-11-25",
+      ],      
 
       accountList: [
         {
@@ -274,6 +285,9 @@ export default {
     addrConfirm(form){
       this.form.addr = form.addr;
       this.form.addrdetail = form.addrdetail;
+    },
+    calendarConfirm(day){
+      this.visitDay = day;
     }
   }
 }

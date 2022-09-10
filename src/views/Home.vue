@@ -84,8 +84,7 @@ export default {
           'main': '메인',
           
           // 충전상태
-          'chargeStatus': '충전상태',
-          // 예약현황
+          'chargeStatus': '충전상태', 
           'reserveStatus': '예약현황',
 
           //홈충전솔루션신청
@@ -97,6 +96,8 @@ export default {
           'myPage': '마이페이지',
           // 내정보
           'myInfo': '내정보',
+          //이용내역
+          'usingList': '이용내역',
 
           // 고객센터
           'cscenter': '고객센터',

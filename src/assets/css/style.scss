@@ -785,6 +785,17 @@ i[class*=i-] .svg-prevent{position:absolute;top:0;left:0;z-index: 1;width:100%;h
   .addr-list li ~ li{ border-color: #D9D9D9;}
 }
 
+/* calendar-wrap */
+.calendar-wrap .calendar-header{display:flex;align-items:center;margin-bottom:3.2rem;}
+.calendar-wrap .calendar-header .calender-date{flex:1;color:#111F42;font-size:1.8rem;font-weight:700;text-align:center;}
+.calendar-wrap .calendar-header .prev,
+.calendar-wrap .calendar-header .next{display:block;width:2.6rem;height:2.6rem;display:flex;flex-direction: column;justify-content:center;align-items:center;}
+.calendar-wrap .calendar-body table th,
+.calendar-wrap .calendar-body table td{height:3rem;vertical-align: middle;text-align:center;}
+.calendar-wrap .calendar-body table .date{width:2.2rem;height:2.2rem;margin:0 auto;border-radius:2rem;display:flex;flex-direction: column;justify-content:center;align-items:center;}
+.calendar-wrap .calendar-body table .date.selected{background:#BFBFBF;color:#fff;}
+.calendar-wrap .calendar-body table .date.disabled{color:#D7DEED;}
+
 /* pop-card-regist */
 .card-regist-wrap .txt-info{font-size:1.2rem;margin-top:0.8rem;}
 

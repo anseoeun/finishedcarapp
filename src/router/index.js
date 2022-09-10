@@ -33,9 +33,8 @@ const routes = [
   { path: '/myPage', meta: {layout: 'Default', menu:'my' }, component: () => import('@/views/MyPage.vue')},
   // 내정보
   { path: '/myInfo', meta: { layout: 'Sub', title:'내정보'}, component: () => import('@/views/MyInfo.vue')},
-  // 카드상세및혜택
-  { path: '/cardService', meta: {layout: 'Sub', title:'BMW Charging 서비스', menu:'my' }, component: () => import('@/views/CardService.vue')},
-
+  // 이용내역
+  { path: '/usingList', meta: { layout: 'Sub', title:'이용내역'}, component: () => import('@/views/UsingList.vue')},
 
 
   //고객센터
@@ -50,12 +49,13 @@ const routes = [
   // 라이센스
   { path: '/license', meta: {layout: 'Sub', footer: true, title:'라이센스', menu:'cscenter' }, component: () => import('@/views/License.vue')},
 
-
-
   //bmw
   { path: '/joinOther', meta: {layout: 'Sub', title:'회원가입' }, component: () => import('@/views/JoinOther.vue')},
   { path: '/bmwApps', meta: {layout: 'Default' }, component: () => import('@/views/BmwApps.vue')},
+  // 카드상세및혜택
+  { path: '/cardService', meta: {layout: 'Sub', title:'BMW Charging 서비스', menu:'my' }, component: () => import('@/views/CardService.vue')},
 
+  
   //polestar
   { path: '/event', meta: {layout: 'Sub', footer: true, title:'이벤트', menu:'cscenter' }, component: () => import('@/views/Event.vue')},  
 ]
