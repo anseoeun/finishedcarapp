@@ -1,16 +1,18 @@
 <template>
   <div class="contents">
     <div class="apply-wrap">
-      <!-- 진행상태 -->
-      <h2 class="tit-type2">진행상태</h2>
-      <div class="grid-box">
-        <ul>
-          <li>
-            <div class="cell label">진행상태</div>
-            <div class="cell auto">설치신청완료</div>
-          </li>
-        </ul>
-      </div>      
+      <template v-if="$route.path === '/applyStatus'">
+        <!-- 진행상태 -->
+        <h2 class="tit-type2">진행상태</h2>
+        <div class="grid-box process-status">
+          <ul>
+            <li>
+              <div class="cell label">진행상태</div>
+              <div class="cell auto">설치신청완료</div>
+            </li>
+          </ul>
+        </div>
+      </template>     
       <!-- 설치장소 -->
       <h2 class="tit-type2">설치장소</h2>
       <div class="grid-box">
@@ -45,11 +47,11 @@
       <h2 class="tit-type2">충전기</h2>
       <div class="grid-box">
         <ul>
-          <li>
+          <li v-if="$route.path === '/apply'">
             <div class="cell label">충전기</div>
             <div class="cell auto">개인용 충전기</div>
           </li>
-          <li>
+          <li v-else>
             <div class="cell label">충전기</div>
             <div class="cell auto">
               <div class="f-wrap">
@@ -85,7 +87,7 @@
       <h2 class="tit-type2">방문 요청일</h2>
       <div class="grid-box">
         <ul>
-          <li>
+          <li v-if="$route.path === '/apply'">
             <div class="cell label">방문 요청일</div>
             <div class="cell auto">
               <div class="f-wrap">
@@ -94,13 +96,9 @@
               </div>
             </div>
           </li>
-        </ul>
-      </div>
-      <div class="grid-box">
-        <ul>
-          <li>
+          <li v-else>
             <div class="cell label">방문 요청일</div>
-            <div class="cell auto">{{ visitDay }}</div>
+            <div class="cell auto">2022-09-03</div>
           </li>
         </ul>
       </div>
@@ -147,12 +145,17 @@
         </div>
       </div>
       
-      <div class="btn-wrap">
-        <button class="btn-type1 st1 disabled-st1" disabled><span>결제하기</span></button>
-      </div>
-      <div class="btn-wrap">
+      <div v-if="$route.path === '/apply'" class="btn-wrap">
         <button class="btn-type1 st1" @click="popup.complete=true"><span>신청하기</span></button>
-      </div>
+      </div>      
+      <template v-else>
+        <div class="btn-wrap">
+          <button class="btn-type1 st1 disabled-st1" disabled><span>결제하기</span></button>
+        </div>
+        <div class="btn-wrap">
+          <button class="btn-type1 st1 disabled-st1"><span>결제하기</span></button>
+        </div>
+      </template>
     </div>
 
 

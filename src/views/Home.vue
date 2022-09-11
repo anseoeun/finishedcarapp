@@ -87,17 +87,21 @@ export default {
           'chargeStatus': '충전상태', 
           'reserveStatus': '예약현황',
 
-          //홈충전솔루션신청
-          'applyIndex': '홈충전솔루션신청',
-          'apply': '홈충전솔루션신청',
-          'applyPayment': '홈충전솔루션신청-걸제',
+          // 홈충전신청
+          'applyIndex': '홈충전신청Index',
+          'apply': '홈충전신청',
+          'applyStatus': '홈충전설치현황',
+          'applyPayment': '홈충전신청-걸제',
 
           // 마이페이지
           'myPage': '마이페이지',
           // 내정보
           'myInfo': '내정보',
-          //이용내역
+          // 이용내역
           'usingList': '이용내역',
+
+          // 충전하기
+          'chargeMap': '충전소지도',
 
           // 고객센터
           'cscenter': '고객센터',
@@ -114,7 +118,7 @@ export default {
 
       },
       bmwList: {
-          //BMW
+          // BMW
           'title-bmw': '-BMW',
           // xEV 고객 가입
           'joinOther': 'xEV 고객 가입',
@@ -122,11 +126,13 @@ export default {
           'bmwApps': 'BMW APPS',
           // 카드상세및혜택
           'cardService': '카드상세및혜택',          
+          // 상품구매내역
+          'productBuyList': '상품구매내역',          
       },
       polestarList: {
-          //폴스타
+          // 폴스타
           'title-polestar': '-POLESTAR',
-          // xEV 고객 가입
+          // 이벤트
           'event': '이벤트',
       }
     }

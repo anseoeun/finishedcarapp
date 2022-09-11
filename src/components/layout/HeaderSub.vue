@@ -27,6 +27,11 @@ export default {
         if(this.skin === 'benz') return '예약내역'
         if(this.skin === 'polestar') return '예약내역'
       }
+      if(this.$route.path === '/apply' || this.$route.path === '/applyIndex') { //신청하기
+        if(this.skin === 'bmw') return '홈충전솔루션 신청'
+        if(this.skin === 'benz') return '홈충전솔루션 신청'
+        if(this.skin === 'polestar') return '홈충전기 설치신청'
+      }
       return this.$root.$route.meta.title ? this.$root.$route.meta.title : ''
     },
   },

@@ -1,6 +1,6 @@
 <template>
   <div class="contents">
-    <div class="join-wrap">
+    <div class="myinfo-wrap">
       <h2 class="tit-type1">내정보</h2>
       <!-- 인증정보 -->
       <h3 class="tit-type2">인증정보</h3>
@@ -97,14 +97,14 @@
                   <div class="auto">
                     [현대]<br><span class="txt-card-num">0000-****-****-0000</span>
                   </div>
-                  <button class="btn-type4 st2" @click="popup.cardDeleteDisable=true"><span>삭제</span></button>
+                  <button class="btn-type4 st3" @click="popup.cardDeleteDisable=true"><span>삭제</span></button>
                   <button class="btn-type4 st1"><span>변경</span></button>
                 </div>
                 <div class="f-wrap">
                   <div class="auto">
                     [현대]<br><span class="txt-card-num">0000-****-****-0000</span>
                   </div>
-                  <button class="btn-type4 st2" @click="popup.cardDelete=true"><span>삭제</span></button>
+                  <button class="btn-type4 st3" @click="popup.cardDelete=true"><span>삭제</span></button>
                   <button class="btn-type4 st1"><span>변경</span></button>
                 </div>
                 <div class="f-wrap">
@@ -162,7 +162,7 @@
       <div class="wrap-box">
         <div class="f-wrap">
           <div class="auto">
-            <ul class="basic-list">
+            <ul class="basic-list alarm-list">
               <li v-for="(item, index) in alarm" :key="index">{{ alarmList[item].label }}</li>
             </ul>
           </div>
@@ -245,7 +245,7 @@
     <Popup :is-open="popup.alarm" @close="popup.alarm=false;" >
         <template slot="header">알람 설정</template>
         <template slot="body">
-          <div class="basic-list st2">
+          <div class="basic-list st2 alarm-list">
             <li v-for="(item, index) in alarmList" :key="index">
               <label class="inp-check">
                 <input type="checkbox" v-model="alarm" :value="item.value">

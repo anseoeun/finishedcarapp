@@ -1,7 +1,7 @@
 <template>
   <div class="contents">
     <div class="using-wrap">
-      <h2 class="tit-type1">이용내역</h2>
+      <h2 class="tit-type1">상품구매내역</h2>
       <div class="using-list">
         <ul>
           <li>
@@ -42,15 +42,11 @@
             <div class="month">10월</div>
             <div class="auto">
               <div class="f-wrap-list">
-                <div class="f-wrap">BMW 거점용 충전기
-                  <div class="right">9,611원</div>
-                </div>
-                <div class="f-wrap">2021-10-10 10:12:34 일시불
-                  <div class="right">미청구</div>
-                </div>
+                <div class="f-wrap">BMW 거점용 충전기 </div>
+                <div class="f-wrap">2021-10-10 10:12:34 일시불</div>
               </div>
             </div>
-            <Icon type="arr-using-link"/>
+            <div class="account">250,000원</div>
           </button>
         </li>
       </ul>
@@ -60,19 +56,15 @@
     <div class="using-list">
       <ul>
         <li v-for="i in 2" :key="i">
-          <button class="box">
+          <button class="box" @click="popup.popListDetail=true">
             <div class="month">10월</div>
             <div class="auto">
               <div class="f-wrap-list">
-                <div class="f-wrap">BMW 거점용 충전기
-                  <div class="right">9,611원</div>
-                </div>
-                <div class="f-wrap">2021-10-10 10:12:34 일시불
-                  <div class="right">미청구</div>
-                </div>
+                <div class="f-wrap">BMW 거점용 충전기 </div>
+                <div class="f-wrap">2021-10-10 10:12:34 일시불</div>
               </div>
             </div>
-            <Icon type="arr-using-link"/>
+            <div class="account">250,000원</div>
           </button>
         </li>
       </ul>

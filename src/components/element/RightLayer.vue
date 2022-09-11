@@ -1,26 +1,18 @@
 <template>
     <div 
       ref="layerwrap" 
-      class="btm-layer-wrap"
+      class="right-layer-wrap"
       :class="{on:visible}"
      >
-      <div ref="layer" class="btm-layer" style="display:none">
-        <button v-if="close" class="btn-close" @click="$emit('close');"><Icon type="close" /></button>        
+      <div ref="layer" class="right-layer">
           <template v-if="$slots.header">
-              <div class="layer-header">
-                <button class="btn-header-close" @click="$emit('close');"><Icon type="back" /></button>
-                <div class="title">
-                  <slot ref="header" name="header" />
-                </div>
-              </div>
+            <div class="layer-header">
+              <slot ref="header" name="header" />
+              <button class="btn-header-close" @click="$emit('close');"><Icon type="close" /></button>
+            </div>
           </template>
           <template>
-              <slot ref="content" name="content" />
-          </template>
-          <template v-if="$slots.footer">
-              <div class="layer-footer">
-                <slot ref="footer" name="footer" />
-              </div>
+            <slot ref="content" name="content" />
           </template>
       </div>
     </div>
@@ -41,7 +33,7 @@ export default {
       close:{
         type: Boolean,
         default: false
-      },      
+      },
     },
     data(){
       return{
@@ -51,15 +43,16 @@ export default {
     },
     watch: {
       visible(newVisible) {
-        const layerwrap = this.$refs.layerwrap
+        // const layerwrap = this.$refs.layerwrap
         const layer = this.$refs.layer
         
         if (newVisible) {
             setTimeout(()=>{
               $('body').css('overflow', 'hidden');
-              $(layerwrap).fadeIn(300);
+              // $(layerwrap).show();
               setTimeout(()=>{
-                $(layer).slideDown(180, function(){
+                
+                $(layer).animate({right:0}, function(){
                   this.$emit('opended')
                   $(layer).find('.cont-scroll').scrollTop(0);
                 }.bind(this));
@@ -92,14 +85,13 @@ export default {
         const layerwrap = this.$refs.layerwrap
         const layer = this.$refs.layer
 
-        let startY= null;
+        let startX= null;
         let dir = null;
         let menutop = 0 
         let over = 100;
         let close = false;
-        let moveY = null;
+        let moveX = null;
         let flag = false;
-        // let bottom = $(layerwrap).hasClass('apply-footer') ? $('.footer').height() : 0;
 
         function touchMove(){
           let e = window.event;
@@ -107,24 +99,24 @@ export default {
 
             let touch = e.touches[0];
 
-            moveY = Math.abs(menutop - parseInt(startY - touch.clientY));
+            moveX = Math.abs(menutop - parseInt(startX - touch.clientX));
 
-            if(moveY > 30) flag = true; 
+            if(moveX > 30) flag = true; 
             if(flag) e.stopPropagation();
  
-            if(startY > touch.clientY) dir = 'plus'
+            if(startX > touch.clientX) dir = 'plus'
             else dir = 'minus'
             
-            if(menutop - parseInt(startY - touch.clientY) >= 0) {
-              $(layer).css('bottom',  parseInt(startY - touch.clientY) + 'px');
+            if(menutop - parseInt(startX - touch.clientX) >= 0) {
+              $(layer).css('right',  parseInt(startX - touch.clientX) + 'px');
             }else{
-              $(layer).css('bottom', 0);
+              $(layer).css('right', 0);
             }
 
-           if(dir == 'minus' && moveY > over){
+           if(dir == 'minus' && moveX > over){
                 close = true;
             }else{
-                close = false;0
+                close = false;
             }
         }
 
@@ -135,13 +127,13 @@ export default {
                   this.$emit('close');
                 }, 300)
             }else{
-                $(layer).css('bottom', 0);
+                $(layer).css('right', 0);
                 $('body').css('overflow', 'hidden');
             }
 
             $(layer).removeClass('ing');
             flag = false;
-            startY= null
+            startX= null
             setTimeout(()=>{
               if(this.scrollTop == 0) this.isScrolling = false
             }, 150)
@@ -151,7 +143,7 @@ export default {
           if(this.isScrolling) return
             let touch = e.touches[0];
             menutop = 0;
-            startY = touch.clientY;
+            startX = touch.clientX;
             close = false;
         }
 
@@ -160,14 +152,12 @@ export default {
         layerwrap.addEventListener("touchend", touchEnd.bind(this), true);
       },
       closeLayer(){
-        const layerwrap = this.$refs.layerwrap
+        // const layerwrap = this.$refs.layerwrap
         const layer = this.$refs.layer
 
        
-        $(layer).slideUp(150, ()=>{
-          $(layer).css('bottom', 0);
-          $(layerwrap).fadeOut(300);
-        })
+        $(layer).animate({right:'-100vw'});
+
         $('body').css('overflow', '');
       }      
     }

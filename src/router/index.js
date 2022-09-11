@@ -25,18 +25,23 @@ const routes = [
   // 예약현황
   { path: '/reserveStatus', meta: {layout: 'Sub', title:'예약현황' }, component: () => import('@/views/RserveStatus.vue')},
   // 홈충전솔루션신청
+  { path: '/applyIndex', meta: {layout: 'Sub', title:'홈충전솔루션 신청' }, component: () => import('@/views/ApplyIndex.vue')},
   { path: '/apply', meta: {layout: 'Sub', title:'홈충전솔루션 신청' }, component: () => import('@/views/Apply.vue')},
+  { path: '/applyStatus', meta: {layout: 'Sub', title:'설치현황 확인' }, component: () => import('@/views/Apply.vue')},
   // 홈충전솔루션신청-결제
   { path: '/applyPayment', meta: {layout: 'Sub', title:'홈충전솔루션 신청' }, component: () => import('@/views/ApplyPayment.vue')},
 
   // 마이페이지
   { path: '/myPage', meta: {layout: 'Default', menu:'my' }, component: () => import('@/views/MyPage.vue')},
   // 내정보
-  { path: '/myInfo', meta: { layout: 'Sub', title:'내정보'}, component: () => import('@/views/MyInfo.vue')},
+  { path: '/myInfo', meta: { layout: 'Sub', footer:true, title:'내정보', menu:'my'}, component: () => import('@/views/MyInfo.vue')},
   // 이용내역
-  { path: '/usingList', meta: { layout: 'Sub', title:'이용내역'}, component: () => import('@/views/UsingList.vue')},
+  { path: '/usingList', meta: { layout: 'Sub', footer: true, title:'이용내역', menu:'my'}, component: () => import('@/views/UsingList.vue')},
+  
+  // 충전하기 지도
+  { path: '/chargeMap', meta: {layout: 'Map', menu:'charge' }, component: () => import('@/views/ChargeMap.vue')},
 
-
+  
   //고객센터
   { path: '/cscenter', meta: {layout: 'Default', menu:'cscenter' }, component: () => import('@/views/Cscenter.vue')},
   // 공지사항
@@ -49,14 +54,16 @@ const routes = [
   // 라이센스
   { path: '/license', meta: {layout: 'Sub', footer: true, title:'라이센스', menu:'cscenter' }, component: () => import('@/views/License.vue')},
 
-  //bmw
+  //bmw ----------
   { path: '/joinOther', meta: {layout: 'Sub', title:'회원가입' }, component: () => import('@/views/JoinOther.vue')},
   { path: '/bmwApps', meta: {layout: 'Default' }, component: () => import('@/views/BmwApps.vue')},
   // 카드상세및혜택
   { path: '/cardService', meta: {layout: 'Sub', title:'BMW Charging 서비스', menu:'my' }, component: () => import('@/views/CardService.vue')},
+  // 상품구매내역
+  { path: '/productBuyList', meta: {layout: 'Sub',footer: true, title:'상품구매내역', menu:'my' }, component: () => import('@/views/ProductBuyList.vue')},
 
-  
-  //polestar
+
+  //polestar ----------
   { path: '/event', meta: {layout: 'Sub', footer: true, title:'이벤트', menu:'cscenter' }, component: () => import('@/views/Event.vue')},  
 ]
 

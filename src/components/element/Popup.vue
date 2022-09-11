@@ -5,7 +5,7 @@
     class="popup-wrap">
       <div class="dim" v-if="isDim" @click="onCloseDim"></div>
       <div class="popup">
-        <!-- <button v-if="close" class="btn-close" @click="$emit('close');"><Icon type="close" /></button>         -->
+        <button v-if="close" class="btn-close" @click="$emit('close');"><Icon type="close" /></button>        
           <div v-if="$slots.header" class="pop-header">
               <div class="pop-tit">
                 <slot name="header" />
@@ -16,7 +16,7 @@
                 <slot name="body" />
               </template>
           </div>
-          <div class="pop-footer">
+          <div v-if="footer" class="pop-footer">
               <div class="btn-wrap">
                 <slot v-if="$slots.btn" name="btn" />
                 <button v-else class="btn-type1 st1" @click="$emit('close');$emit('confirm')"><span>확인</span></button>
@@ -46,6 +46,10 @@ export default {
       default: false
     },
     close:{
+      type: Boolean,
+      default: false
+    },
+    footer:{
       type: Boolean,
       default: true
     },
