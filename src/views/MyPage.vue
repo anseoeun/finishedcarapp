@@ -94,11 +94,7 @@
 </template>
 
 <script>
-
 export default {
-  components:{
-
-  },
   data(){
     return{
       cardSliderOpt: {
@@ -130,8 +126,5 @@ export default {
         ]
     }
   },
-  mounted(){
-    
-  }
 }
 </script>

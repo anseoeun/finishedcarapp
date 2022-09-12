@@ -138,10 +138,10 @@
           </li>
         </ul>
          <div class="txt-st sm">
-          <p><span class="ico">※</span><span class="auto">표준공사 <b>30m 기준으로 초과시 m당 초과 비용</b>이 발생할 수 있습니다.</span></p>
-          <p><span class="ico">※</span><span class="auto">여유 전력이 부족할 경우 <b>전력 증설로 인한 한국전력 표준 시설 부담금이 발생</b>할 수 있습니다.</span></p>
-          <p><span class="ico">※</span><span class="auto"><b>완속충전기 취득세</b>가 부과될 수 있습니다.</span></p>
-          <p><span class="ico">※</span><span class="auto">비용은 <b>현장 실사가 종료된 후 결제</b>하실 수 있습니다.</span></p>
+          <p><span class="ico">※</span><span class="auto">표준공사 <b class="bold">30m 기준으로 초과시 m당 초과 비용</b>이 발생할 수 있습니다.</span></p>
+          <p><span class="ico">※</span><span class="auto">여유 전력이 부족할 경우 <b class="bold">전력 증설로 인한 한국전력 표준 시설 부담금이 발생</b>할 수 있습니다.</span></p>
+          <p><span class="ico">※</span><span class="auto"><b class="bold">완속충전기 취득세</b>가 부과될 수 있습니다.</span></p>
+          <p><span class="ico">※</span><span class="auto">비용은 <b class="bold">현장 실사가 종료된 후 결제</b>하실 수 있습니다.</span></p>
         </div>
       </div>
       
@@ -183,7 +183,7 @@
     <Popup :is-open="popup.option" @close="popup.option=false;" >
         <template slot="header">옵션 선택</template>
         <template slot="body">
-          <div class="basic-list st2">
+          <div class="basic-list st2 option-list">
             <li v-for="(item, index) in optionList" :key="index">
               <label class="inp-check">
                 <input type="checkbox" v-model="option" :value="item.value">

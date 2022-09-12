@@ -1,6 +1,6 @@
 <template>
   <div class="contents">
-    <button class="back"><Icon v-if="skin !== 'polestar'" type="back" /></button>
+    <button v-if="skin !== 'polestar'" class="back"><Icon type="back" /></button>
     <div class="login-wrap">
       <div class="logo"></div>
       <div class="min-fix">
@@ -36,10 +36,6 @@
         <template slot="body">
           <div class="alert-txt">아이디는 이메일 형식이어야 합니다.</div>
       </template>
-      <template slot="btn">
-        <button class="btn-type1 st1" @click="popup.emailCheck=false;"><span>확인</span></button>
-        <button class="btn-type1 st2" @click="popup.emailCheck=false;"><span>취소</span></button>
-      </template>
     </Popup>
     <!-- 팝업:아이디비밀번호안내 -->
     <Popup :is-open="popup.idpwCheck" @close="popup.idpwCheck=false">
@@ -60,17 +56,7 @@
 export default {
   data(){
     return{
-      status: 'selfAuth',
-      guideTextStatus: 'selfAuth',
-      form:{
-        agency: {},
-        tel: '',
-        auth: '',
-        addr:'',
-        addr2:'',
-        pin: '',
-        pin2: '',        
-      }, 
+      form:{}, 
 
       popup: {
         emailCheck: false,

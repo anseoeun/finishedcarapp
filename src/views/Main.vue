@@ -112,7 +112,7 @@
         </template>
     </Popup>    
      <!-- 팝업:이미지보기 -->
-    <Popup :is-open="popup.view"  :dimClose="true" class="img-view" @close="popup.view=false;">
+    <Popup :is-open="popup.view" :footer="false" :dimClose="true" class="img-view" @close="popup.view=false;">
         <template slot="body">
           <img :src="bannerSrc" alt="">
         </template>

@@ -66,7 +66,10 @@ export default {
       list: {
           'title-sample': '-샘플',        
           //샘플
-
+          'sample/form': '샘플/폼요소',
+          'sample/button': '샘플/버튼',
+          'sample/list': '샘플/리스트',
+          'sample/popup': '샘플/팝업',
 
           'title-login': '-로그인/회원가입',
           // 스플래시
@@ -102,6 +105,10 @@ export default {
 
           // 충전하기
           'chargeMap': '충전소지도',
+          'chargeSearch': '충전소 검색',
+          'chargeDetail': '충전소 상세',
+          'ChargeStart': '즉시충전',
+          
 
           // 고객센터
           'cscenter': '고객센터',
@@ -137,7 +144,8 @@ export default {
       }
     }
   },
-  methods: {
+  mounted(){
+    document.querySelector('body').setAttribute('style', '')
   }
 }
 </script>

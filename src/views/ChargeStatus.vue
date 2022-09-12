@@ -51,6 +51,10 @@
         <template slot="body">
           <div class="alert-txt">충전을 취소하시겠습니까?</div>
         </template>
+        <template slot="btn">
+          <button class="btn-type1 st1" @click="popup.cancel=false"><span>확인</span></button>
+          <button class="btn-type1 st2" @click="popup.cancel=false"><span>취소</span></button>
+        </template>
     </Popup>    
   </div>
 </template>

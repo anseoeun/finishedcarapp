@@ -12,10 +12,10 @@
             </div>
             <ul class="navi-selec">
               <li>
-                <button class="icon tmap"><img :src="iconTmap" /></button>
+                <button class="icon tmap"><img :src="require('@/assets/images/ico-tmap.png')" /></button>
               </li>
               <li>
-                <button class="icon cacaonavi"><img :src="iconCaCaoNavi" /></button>
+                <button class="icon cacaonavi"><img :src="require('@/assets/images/ico-cacao-navi.png')" /></button>
               </li>
             </ul>
           </div>
@@ -32,13 +32,5 @@ export default {
       default: false  
     },
   },
-  computed: {
-    iconTmap(){
-      return require(`@/assets/images/${this.skin}/ico-tmap.png`);
-    },
-    iconCaCaoNavi(){
-      return require(`@/assets/images/${this.skin}/ico-cacao-navi.png`);
-    }
-  },  
 }
 </script>

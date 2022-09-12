@@ -145,6 +145,10 @@
             </div>
           </li>
           <li>
+            <div class="cell label">차량번호</div>
+            <div class="cell auto">01테9876</div>
+          </li>
+          <li>
             <div class="cell label">소유자명</div>
             <div class="cell auto">
               <div class="f-wrap">
@@ -276,28 +280,12 @@ export default {
   data(){
     return{
       form: {
-        email: '',
         pw: '',
-        pwcheck: '',
+        newpw: '',
+        newpwcheck: '',
         addr: '',
         addrdetail: '',
-        memcard: ''
       },
-      supportProgram: '',
-      supportProgromList: [
-        {
-          value: 'p01',
-          label: '홈충전기 설치지원<br>(구매조건 및 설치 환경에 따라 일부 추가비용 발생 가능)'
-        },
-        {
-          value: 'p02',
-          label: '충전포인트(1년 무제한)'
-        },
-        {
-          value: 'p03',
-          label: '충전포인트(15만원)'
-        },
-      ],
       alarm: [0,1,2,3,4,5,6,7,8,9],
       alarmList: [
         {

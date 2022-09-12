@@ -60,7 +60,7 @@
     <div class="using-list">
       <ul>
         <li v-for="i in 2" :key="i">
-          <button class="box">
+          <button class="box" @click="popup.popListDetail=true">
             <div class="month">10월</div>
             <div class="auto">
               <div class="f-wrap-list">

@@ -12,6 +12,10 @@ $btn-st1-br: 1px solid #53565A;
 $bg-header-sub: #fff;
 $c-header-title: #53565A;
 $check-on: "data:image/svg+xml,%3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4 8L9 1' stroke='%23FF7500'/%3E%3C/svg%3E%0A";
+$arr-bg-sm: "data:image/svg+xml,%3Csvg width='11' height='10' viewBox='0 0 11 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 5H10M10 5L5.71429 0.5M10 5L5.71429 9.5' stroke='%23FF7500'/%3E%3C/svg%3E%0A";
+%arr-after{
+  content:'';display:inline-block;width:1rem;height:0.9rem;margin-left:1rem;background: url($arr-bg-sm) no-repeat 0 0;
+}
 
 @font-face {
   font-family: "PolestarUnica77TT";

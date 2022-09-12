@@ -18,14 +18,14 @@
                 <div class="info"><span><span>운영시간</span><b>24시간</b></span></div>
               </div>
               <div class="btn-wrap">
-                <router-link to="/" class="btn-type1 st1"><span>충전시작</span></router-link>
+                <router-link to="/" class="btn-type2 st1"><span>충전시작</span></router-link>
                 <div class="f-wrap">
                   <div class="auto">
-                    <button class="btn-type1 st2" @click="$emit('mapFind')"><span>길안내</span></button>
+                    <button class="btn-type2 st2" @click="$emit('mapFind')"><span>길안내</span></button>
                   </div>
                   <button class="btn-favorite" @click="favoriteChecked = !favoriteChecked"><Icon type="favorite" :class="{on: favoriteChecked}" /></button>
                 </div>
-              </div>              
+              </div>
             </div>
         </div>
       </template>  

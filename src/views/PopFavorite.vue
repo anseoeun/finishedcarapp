@@ -51,7 +51,7 @@ export default {
           tit: '[차지비] 서울시 송파구<br>롯데타워 지하2층',
           status: '이용가능',
           km: '0.0',
-          favorite: true,
+          favorite: false,
         },
         {
           tit: '[차지비] 서울시 송파구<br>롯데타워 지하2층',

@@ -137,7 +137,7 @@ export default {
            this.$el.style.width = rem(w);
            this.$el.style.height = rem(h);
            function rem(value){
-               return (value / 28) * 2.685 + 'rem'
+               return (value / 28) * 2.8 + 'rem'
            }
        }
    }  

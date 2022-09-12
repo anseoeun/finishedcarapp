@@ -15,7 +15,10 @@
                 <strong class="tit">{{ item.tit }}</strong>
                 <ul>
                   <li v-for="(list, j) in item.list" :key="j">
-                    <button :class="{on: list.selected}" @click="list.selected = !list.selected" v-html="list.txt"></button>
+                    <button :class="{on: list.selected}" @click="list.selected = !list.selected">
+                      <span v-if="list.txt == '벤츠'"><img :src="require('@/assets/images/benz/ico-benz.png')" style="width:2rem" /></span>
+                      <template v-else><span v-html="list.txt"></span></template>
+                    </button>
                   </li>
                 </ul>
               </li>
@@ -28,7 +31,7 @@
                 <strong class="tit">{{ item.tit }}</strong>
                 <ul>
                   <li v-for="(list, j) in item.list" :key="j">
-                    <button :class="{on: list.selected}" @click="list.selected = !list.selected" v-html="list.txt"></button>
+                    <button :class="{on: list.selected}" @click="list.selected = !list.selected"><span v-html="list.txt"></span></button>
                   </li>
                 </ul>
               </li>
@@ -51,14 +54,71 @@ export default {
   data() {
     return {
       currentTab: 'buisness',
-      buisnessList: [
+      buisnessList1: [
         {
           tit: '차지비',
           list: [
             {
               selected: true,
               txt: '차지비'
+            },
+          ]
+        },
+        {
+          tit: '공공기관',
+          list: [
+            {
+              selected: true,
+              txt: '환경부'
+            },
+            {
+              selected: false,
+              txt: '한전'
             }
+          ]
+        },
+        {
+          tit: '기타 사업자',
+          list: [
+            {
+              selected: true,
+              txt: '대영채비'
+            },
+            {
+              selected: false,
+              txt: '에버온'
+            },
+            {
+              selected: false,
+              txt: '한국전기차<br>충전서비스'
+            },
+            {
+              selected: true,
+              txt: '대영채비'
+            },
+            {
+              selected: false,
+              txt: '에버온'
+            },
+            {
+              selected: false,
+              txt: '한국전기차<br>충전서비스'
+            },
+          ]
+        },
+      ],
+      buisnessList2: [
+        {
+          tit: '차지비',
+          list: [
+            {
+              selected: true,
+              txt: '차지비'
+            },
+            {
+              selected: false,
+              txt: '벤츠'
+            },
           ]
         },
         {
@@ -133,6 +193,11 @@ export default {
         }
       ]
     }
-  }
+  },
+  computed: {
+    buisnessList(){
+      return  this.skin === 'benz' ? this.buisnessList2 : this.buisnessList1;
+    }
+  },
 }
 </script>

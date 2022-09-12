@@ -8,7 +8,7 @@
         디자인도 캡쳐이미지임.
       </div>
       <div class="btn-wrap">
-        <router-link to="/" class="btn-type1 st1"><span>문의하기</span></router-link>
+        <router-link to="/" class="btn-type1 st1"><span>등록</span></router-link>
       </div>
     </div>
   </div>

@@ -5,14 +5,14 @@
       <div class="map" :style="`background:url('${require('@/assets/images/temp-map.jpg')}') no-repeat 50% 50%;background-size:cover`"></div>
 
       <div class="map-search">
-        <button>시/도, 도로명, 충전소명으로 검색</button>
+        <router-link to="/">시/도, 도로명, 충전소명으로 검색</router-link>
       </div>
 
-      <button class="mapindex" style="top:150px;left:150px;" @click="btmLayer.popCharge = true"><i class="i-mapidx-wating"></i></button>
-      <button class="mapindex" style="top:200px;left:150px;"><i class="i-mapidx-broken"></i></button>
-      <button class="mapindex" style="top:250px;left:150px;"><i class="i-mapidx-reserved"></i></button>
-      <button class="mapindex" style="top:300px;left:150px;"><i class="i-mapidx-using"></i></button>
-      <button class="mapindex" style="top:350px;left:150px;"><i class="i-mapidx-benz"></i></button>
+      <button class="mapindex" style="top:150px;left:150px;" @click="btmLayer.popCharge=true"><i class="i-mapidx-wating"></i></button>
+      <button class="mapindex" style="top:200px;left:150px;" @click="btmLayer.popCharge=true"><i class="i-mapidx-broken"></i></button>
+      <button class="mapindex" style="top:250px;left:150px;" @click="btmLayer.popCharge=true"><i class="i-mapidx-reserved"></i></button>
+      <button class="mapindex" style="top:300px;left:150px;" @click="btmLayer.popCharge=true"><i class="i-mapidx-using"></i></button>
+      <button class="mapindex" style="top:350px;left:150px;" @click="btmLayer.popCharge=true"><i class="i-mapidx-benz"></i></button>
 
       <div class="zoom-menu">
         <button><Icon type="map-plus" /></button>
@@ -96,8 +96,5 @@ export default {
     }
   },
   
-  mounted(){
-    
-  }
 }
 </script>

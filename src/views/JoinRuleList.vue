@@ -6,7 +6,8 @@
       <div class="text">
         <strong>이용 약관 동의</strong>
         <p>
-          차지비  서비스 이용을 위해 다음 약관에<br>동의해 주시기 바랍니다.
+          <span v-if="skin !== 'polestar'">차지비 서비스</span>
+          <span v-else>Polestar Charging</span> 이용을 위해 다음 약관에<br>동의해 주시기 바랍니다.
         </p>
       </div>
         <div class="menu-wrap">

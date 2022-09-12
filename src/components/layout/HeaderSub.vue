@@ -32,6 +32,11 @@ export default {
         if(this.skin === 'benz') return '홈충전솔루션 신청'
         if(this.skin === 'polestar') return '홈충전기 설치신청'
       }
+      if(this.$route.path === '/ChargeStart') { //충전하기
+        if(this.skin === 'bmw') return '충전하기'
+        if(this.skin === 'benz') return '즉시충전'
+        if(this.skin === 'polestar') return '즉시충전'
+      }
       return this.$root.$route.meta.title ? this.$root.$route.meta.title : ''
     },
   },
