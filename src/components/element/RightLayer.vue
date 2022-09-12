@@ -26,10 +26,6 @@ export default {
         type: Boolean,
         default: false
       },
-      closeChk: {
-        type: Boolean,
-        default: false
-      },
       close:{
         type: Boolean,
         default: false

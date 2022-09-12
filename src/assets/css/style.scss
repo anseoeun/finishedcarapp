@@ -1227,7 +1227,7 @@ i[class*=i-] .svg-prevent{position:absolute;top:0;left:0;z-index: 1;width:100%;h
 .btm-layer-wrap .btm-layer .cont-scroll{flex:1;width: 100%;overflow:hidden;padding:2.4rem;overflow-y:auto;margin-bottom:0;}
 .btm-layer-wrap.max .btm-layer .cont-scroll{min-height:calc(100vh - rem(0));}
 .btm-layer-wrap.apply-footer .btm-layer{padding-bottom:5.6rem}
-@if($skin = 'polestar') {
+@if($skin == 'polestar') {
   .btm-layer-wrap .btm-layer{border-radius:0;}
 }
 
