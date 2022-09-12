@@ -41,12 +41,3 @@ export default {
     }
 }
 </script>
-<style lang="scss">
-  // @import '~@/assets/css/style-bmw.scss';
-  // @import '~@/assets/css/style2.scss';
-  
-</style>
-<!--<style>
-  @import '~@/assets/css/common.css';
-  @import '~@/assets/css/style-bmw.css';
-</style>--> 
