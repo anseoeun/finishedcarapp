@@ -65,7 +65,12 @@ const routes = [
   // 카드상세및혜택
   { path: '/cardService', meta: { layout: 'Sub', title: 'BMW Charging 서비스', menu: 'my' }, component: () => import('@/views/CardService.vue')},
   // 상품구매내역
-  { path: '/productBuyList', meta: { layout: 'Sub',footer: true, title: '상품구매내역', menu: 'my' }, component: () => import('@/views/ProductBuyList.vue')},
+  { path: '/productBuyList', meta: { layout: 'Sub', footer: true, title: '상품구매내역', menu: 'my' }, component: () => import('@/views/ProductBuyList.vue')},
+  // 쿠폰리스트
+  { path: '/couponList', meta: { layout: 'Default', menu: 'coupon' }, component: () => import('@/views/CouponList.vue')},
+  { path: '/couponListNo', meta: { layout: 'Sub', footer: true, title: '쿠폰 eX', menu: 'coupon' }, component: () => import('@/views/CouponListNo.vue')},
+  // 쿠폰보관함
+  { path: '/couponBox', meta: { layout: 'Sub', footer: true, title: '쿠폰보관함', menu: 'coupon' }, component: () => import('@/views/CouponBox.vue')},
 
 
   //polestar ----------

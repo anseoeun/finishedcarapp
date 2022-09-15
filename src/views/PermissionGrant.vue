@@ -26,7 +26,7 @@
             <div class="icon"><i class="i-permission-idx"></i></div>
             <div class="desc">
               <strong>위치</strong>
-              <p>충전소 찾기 서비스에서 충전소 정보 현 위치(GPS)를 지도 경로로 표시</p>
+              <p>충전소 찾기 서비스에서 충전소 정보를<br>현 위치(GPS)를 지도 경로로 표시</p>
             </div>
           </li>
         </ul>
@@ -34,11 +34,11 @@
       <!-- // permission-list -->
       <div class="text2">
         <strong>접근권한 변경 방법</strong>
-        <p class="fs2">설정 > 어플리케이션 정보 > BMW Charging > 어플리케이션 설정</p>
+        <p class="fs2">설정 > 어플리케이션 정보 > App > 어플리케이션 설정</p>
       </div>
       <div class="btn-wrap">
         <button class="btn-type1 st1" @click="alertPop = true"><span>동의</span></button>
-      </div>      
+      </div>
     </div>
   </div>
 </template>

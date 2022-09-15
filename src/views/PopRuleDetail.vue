@@ -1,16 +1,16 @@
 <template>
-    <BtmLayer :visible="visible" @close="$emit('close')" class="pop-notice-detail">
-      <template slot="header">
-        <template v-if="gbnSet === 'rule1'">차지비 이용 약관</template>
-        <template v-if="gbnSet === 'rule2'">개인정보 취급방침</template>
-        <template v-if="gbnSet === 'rule3'">위치기반서비스 이용 약관</template>
-      </template>
-      <template slot="content">
-        <div class="cont-scroll">
-          <!--차지비 이용 약관 -->
-          <div v-if="gbnSet === 'rule1'" class="rule-wrap">
-            <div class="rule-contnet">
-              <pre>
+  <BtmLayer :visible="visible" @close="$emit('close')" class="pop-notice-detail">
+    <template slot="header">
+      <template v-if="gbnSet === 'rule1'">차지비 이용 약관</template>
+      <template v-if="gbnSet === 'rule2'">개인정보 취급방침</template>
+      <template v-if="gbnSet === 'rule3'">위치기반서비스 이용 약관</template>
+    </template>
+    <template slot="content">
+      <div class="cont-scroll">
+        <!--차지비 이용 약관 -->
+        <div v-if="gbnSet === 'rule1'" class="rule-wrap">
+          <div class="rule-contnet">
+            <pre>
                 이용약관
                 제1조 (목적)
                 본 약관은 주식회사 차지비(이하 “회사”라 합니다)가 운영하는 전기자동차 충전 서비스인 차지비 (ChargEV) (이하 “서비스”라 합니다)를 이용함에 있어 회사와 회원 간의 권리와 의무, 책임사항 및 기타 필요한 사항을 규정함을 목적으로 합니다.
@@ -206,12 +206,12 @@
                 [부 칙] (시행일) 이 약관은 2020년 10월 26일부터 시행합니다.
                 [부 칙] (시행일) 이 약관은 2021년 2월 5일부터 시행합니다.
               </pre>
-            </div>
           </div>
-          <!-- 개인정보 취급방침 -->
-          <div v-if="gbnSet === 'rule2'" class="rule-wrap">
-            <div class="rule-contnet">
-              <pre>
+        </div>
+        <!-- 개인정보 취급방침 -->
+        <div v-if="gbnSet === 'rule2'" class="rule-wrap">
+          <div class="rule-contnet">
+            <pre>
                 개인정보처리방침
                 주식회사 차지비(이하 “회사”)는 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 개인정보보호법, 통신비밀보호법, 전기통신사업법 등 정보통신서비스제공자가 준수하여야 할 관련 법령상의 개인정보보호 규정을 준수하며, 관련 법령에 의거한 개인정보처리방침을 정하여 이용자 권익 보호에 최선을 다하고 있습니다.
                 회사는 개인정보처리방침을 통하여 이용자가 제공하는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
@@ -364,12 +364,12 @@
                 [부칙] (시행일) 이 방침은 2021년 02월 05일부터 시행합니다.
                 [부칙] (시행일) 이 방침은 2021년 10월 01일부터 시행합니다.
               </pre>
-            </div>
           </div>
-          <!-- 위치기반서비스 이용 약관 -->
-          <div v-if="gbnSet === 'rule3'" class="rule-wrap">
-            <div class="rule-contnet">
-              <pre>
+        </div>
+        <!-- 위치기반서비스 이용 약관 -->
+        <div v-if="gbnSet === 'rule3'" class="rule-wrap">
+          <div class="rule-contnet">
+            <pre>
                 위치기반서비스이용약관
                 제1조 (목적)
                 본 약관은 회원(서비스 약관에 동의한 자를 말합니다. 이하 “회원”이라고 합니다.)이 주식회사 차지비(이하 “회사”라고 합니다.)가 제공하는 사용자 위치 기반을 통한 전기자동차 충전 서비스인 차지비 (ChargEV) (이하 “서비스”라고 합니다)를 이용함에 있어 회사와 회원의 권리•의무 및 책임사항을 규정함을 목적으로 합니다.
@@ -466,16 +466,24 @@
                 ③ 전화번호 : 02-3213-8206
                 ④ 이메일 : oislsa@chargev.co.kr
               </pre>
-            </div>
           </div>
         </div>
-      </template>
-        <template slot="footer">
-          <div class="btn-wrap">
-            <button class="btn-type1 st1" @click="$emit('close');$emit('confirm')"><span>동의</span></button>
+        <!-- 휴대폰본인확인 서비스 이용 동의-->
+        <div v-if="gbnSet === 'rule4'" class="rule-wrap">
+          <div class="rule-contnet">
+            <pre>
+                ㅋㅋㄴㅋㅇㄴㅇ
+              </pre>
           </div>
-        </template>      
-    </BtmLayer>
+        </div>
+      </div>
+    </template>
+    <template slot="footer">
+      <div class="btn-wrap">
+        <button class="btn-type1 st1" @click="$emit('close');$emit('confirm')"><span>동의</span></button>
+      </div>
+    </template>
+  </BtmLayer>
 </template>
 
 <script>
@@ -484,17 +492,17 @@ export default {
   props: {
     visible: {
       type: Boolean,
-      default: false  
+      default: false
     },
-    gbn:{
+    gbn: {
       type: String,
       default: ''
-    }    
-  },  
-  computed:{
-    gbnSet(){
+    }
+  },
+  computed: {
+    gbnSet() {
       return this.gbn;
     }
-  },  
+  },
 }
 </script>

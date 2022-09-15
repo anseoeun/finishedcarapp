@@ -26,14 +26,16 @@
       <!-- 시간설정 -->
       <h2 class="tit-type2">시간설정</h2>
       <div class="grid-box st4">
-        <p class="txt">시간은 최대시간(9시간)으로 설정되며,<br>충전중 취소 가능합니다.</p>
+        <p class="txt">시간은 최대시간(12시간)으로 설정되며,<br>
+          충전이 완료되면 자동으로 중지합니다.
+        </p>
         <ul>
           <li>
             <div class="cell label">사용시간</div>
-            <div class="cell auto"><b>9시간</b></div>
+            <div class="cell auto"><b>12시간</b></div>
           </li>
         </ul>
-      </div>  
+      </div>
       <!-- 결제방법 -->
       <h2 class="tit-type2">결제방법</h2>
       <div class="grid-box st4">
@@ -47,7 +49,7 @@
             <div class="cell auto"><b>∞ 포인트</b></div>
           </li>
         </ul>
-      </div>  
+      </div>
       <!-- 결제 금액 내역 -->
       <h2 class="tit-type2">결제 금액 내역</h2>
       <div class="grid-box st4">
@@ -57,7 +59,7 @@
             <div class="cell auto"><b>259.0원/kWh</b></div>
           </li>
         </ul>
-      </div>  
+      </div>
 
       <div class="check">
         <label class="inp-check">

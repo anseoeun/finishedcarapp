@@ -132,9 +132,14 @@ export default {
           // BMW APPS
           'bmwApps': 'BMW APPS',
           // 카드상세및혜택
-          'cardService': '카드상세및혜택',          
+          'cardService': '카드상세및혜택',
           // 상품구매내역
-          'productBuyList': '상품구매내역',          
+          'productBuyList': '상품구매내역',
+          // 쿠폰리스트
+          'couponList': '쿠폰리스트',
+          'couponListNo': '쿠폰리스트없음',
+          //쿠폰보관함
+          'couponBox': '쿠폰보관함',
       },
       polestarList: {
           // 폴스타

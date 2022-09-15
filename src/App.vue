@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <div class="hidden"></div>
+    <h1 class="hidden">
+      <template v-if="skin === 'bmw'">BMW Charging</template>
+      <template v-if="skin === 'benz'">Mercedes-benz Charge</template>
+      <template v-if="skin === 'polestar'">Polestar Charge</template>
+    </h1>
     <Layout :layout="layout">
         <router-view />
     </Layout>

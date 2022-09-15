@@ -12,7 +12,7 @@
             </li>
           </ul>
         </div>
-      </template>     
+      </template>
       <!-- 설치장소 -->
       <h2 class="tit-type2">설치장소</h2>
       <div class="grid-box">
@@ -77,7 +77,8 @@
                     <li v-for="(item, index) in option" :key="index">{{ optionList[item].label }}</li>
                   </ul>
                 </div>
-                <button class="btn-type4 st1" @click="popup.option=true"><span v-if="option.length <= 0">선택</span><span v-else>변경</span></button>
+                <button class="btn-type4 st1" @click="popup.option=true"><span v-if="option.length <= 0">선택</span><span
+                    v-else>변경</span></button>
               </div>
             </div>
           </li>
@@ -92,7 +93,8 @@
             <div class="cell auto">
               <div class="f-wrap">
                 <div class="auto">{{ visitDay }}</div>
-                <button class="btn-type4 st1" @click="popup.popCalendar=true"><span v-if="visitDay === ''">선택</span><span v-else>변경</span></button>
+                <button class="btn-type4 st1" @click="popup.popCalendar=true"><span
+                    v-if="visitDay === ''">선택</span><span v-else>변경</span></button>
               </div>
             </div>
           </li>
@@ -118,36 +120,38 @@
             </div>
           </li>
           <li>
-            <div class="cell label">최종금액</div>
+            <div class="cell label">최종금액<br>(VAT포함)</div>
             <div class="cell auto">
               <div class="f-wrap-list">
                 <div v-for="(item, index) in accountList" :key="index" class="f-wrap">
                   <div class="auto">{{ item.item }}</div>
                   <div class="txt-accoun">{{ item.price }} 원</div>
                 </div>
-                <div class="f-wrap">
+                <!-- <div class="f-wrap">
                   <div class="auto">부가세</div>
                   <div class="txt-accoun">170,000 원</div>
-                </div>
+                </div> -->
                 <div class="f-wrap">
                   <div class="auto">합계</div>
-                  <div class="txt-account"><strong>1,870,000</strong> 원</div>
+                  <div class="txt-account"><strong>1,750,000</strong> 원</div>
                 </div>
               </div>
             </div>
           </li>
         </ul>
-         <div class="txt-st sm">
-          <p><span class="ico">※</span><span class="auto">표준공사 <b class="bold">30m 기준으로 초과시 m당 초과 비용</b>이 발생할 수 있습니다.</span></p>
-          <p><span class="ico">※</span><span class="auto">여유 전력이 부족할 경우 <b class="bold">전력 증설로 인한 한국전력 표준 시설 부담금이 발생</b>할 수 있습니다.</span></p>
+        <div class="txt-st sm">
+          <p><span class="ico">※</span><span class="auto">표준공사 <b class="bold">30m 기준으로 초과시 m당 초과 비용</b>이 발생할 수
+              있습니다.</span></p>
+          <p><span class="ico">※</span><span class="auto">여유 전력이 부족할 경우 <b class="bold">전력 증설로 인한 한국전력 표준 시설 부담금이
+                발생</b>할 수 있습니다.</span></p>
           <p><span class="ico">※</span><span class="auto"><b class="bold">완속충전기 취득세</b>가 부과될 수 있습니다.</span></p>
           <p><span class="ico">※</span><span class="auto">비용은 <b class="bold">현장 실사가 종료된 후 결제</b>하실 수 있습니다.</span></p>
         </div>
       </div>
-      
+
       <div v-if="$route.path === '/apply'" class="btn-wrap">
         <button class="btn-type1 st1" @click="popup.complete=true"><span>신청하기</span></button>
-      </div>      
+      </div>
       <template v-else>
         <div class="btn-wrap">
           <button class="btn-type1 st1 disabled-st1" disabled><span>결제하기</span></button>
@@ -159,45 +163,48 @@
     </div>
 
 
-     <!-- 팝업:설치신청 완료 -->
-    <Popup :is-open="popup.complete" @close="popup.complete=false;" >
-        <template slot="header">설치신청 완료</template>
-        <template slot="body"><div class="alert-txt">충전기 설치신청이 완료되었습니다.<br>방문 요청일을 확인 후 5일 이내에<br>설치 기사님이 연락을 드릴 예정입니다.</div></template>
-    </Popup>    
-     <!-- 팝업:설치장소 선택 -->
-    <Popup :is-open="popup.installPlace" @close="popup.installPlace=false;" >
-        <template slot="header">설치장소 선택</template>
-        <template slot="body">
-          <div class="basic-list st2">
-            <li v-for="(item, index) in installPlaceList" :key="index">
-              <label class="inp-radio">
-                <input type="radio" v-model="installPlace" :value="index">
-                <span class="ic"></span>
-                <span class="t">{{ item.label }}</span>
-              </label>
-            </li>
-          </div>
-        </template>
-    </Popup>  
-     <!-- 팝업:옵션 설정 -->
-    <Popup :is-open="popup.option" @close="popup.option=false;" >
-        <template slot="header">옵션 선택</template>
-        <template slot="body">
-          <div class="basic-list st2 option-list">
-            <li v-for="(item, index) in optionList" :key="index">
-              <label class="inp-check">
-                <input type="checkbox" v-model="option" :value="item.value">
-                <span class="ic"></span>
-                <span class="t">{{ item.label }}</span>
-              </label>
-            </li>
-          </div>
-        </template>
-    </Popup>      
+    <!-- 팝업:설치신청 완료 -->
+    <Popup :is-open="popup.complete" @close="popup.complete=false;">
+      <template slot="header">설치신청 완료</template>
+      <template slot="body">
+        <div class="alert-txt">충전기 설치신청이 완료되었습니다.<br>방문 요청일을 확인 후 5일 이내에<br>설치 기사님이 연락을 드릴 예정입니다.</div>
+      </template>
+    </Popup>
+    <!-- 팝업:설치장소 선택 -->
+    <Popup :is-open="popup.installPlace" @close="popup.installPlace=false;">
+      <template slot="header">설치장소 선택</template>
+      <template slot="body">
+        <div class="basic-list st2">
+          <li v-for="(item, index) in installPlaceList" :key="index">
+            <label class="inp-radio">
+              <input type="radio" v-model="installPlace" :value="index">
+              <span class="ic"></span>
+              <span class="t">{{ item.label }}</span>
+            </label>
+          </li>
+        </div>
+      </template>
+    </Popup>
+    <!-- 팝업:옵션 설정 -->
+    <Popup :is-open="popup.option" @close="popup.option=false;">
+      <template slot="header">옵션 선택</template>
+      <template slot="body">
+        <div class="basic-list st2 option-list">
+          <li v-for="(item, index) in optionList" :key="index">
+            <label class="inp-check">
+              <input type="checkbox" v-model="option" :value="item.value">
+              <span class="ic"></span>
+              <span class="t">{{ item.label }}</span>
+            </label>
+          </li>
+        </div>
+      </template>
+    </Popup>
     <!-- 팝업:주소검색 -->
-    <PopAddr :visible="popup.popAddr" @confirm="addrConfirm" @close="popup.popAddr=false"/>
+    <PopAddr :visible="popup.popAddr" @confirm="addrConfirm" @close="popup.popAddr=false" />
     <!-- 팝업:캘린더 -->
-    <PopCalendar :visible="popup.popCalendar" :selectedDay="visitDay" :disabledDate="disabledDate"  @confirm="calendarConfirm" @close="popup.popCalendar=false"/>
+    <PopCalendar :visible="popup.popCalendar" :selectedDay="visitDay" :disabledDate="disabledDate"
+      @confirm="calendarConfirm" @close="popup.popCalendar=false" />
   </div>
 </template>
 
@@ -205,12 +212,12 @@
 import PopAddr from '@/views/PopAddr'
 import PopCalendar from '@/views/PopCalendar'
 export default {
-  components:{
+  components: {
     PopAddr,
     PopCalendar
-  },  
-  data(){
-    return{
+  },
+  data() {
+    return {
       form: {
         addr: '서울시 송파구 올림픽로 300',
         addrdetail: '3045호',
@@ -262,19 +269,19 @@ export default {
         "2022-10-25",
         "2022-11-15",
         "2022-11-25",
-      ],      
+      ],
 
       accountList: [
         {
-          item: '충전기',
-          price: '1,500,000'
+          item: '충전기 및 시공비',
+          price: '1,550,000'
         },
         {
-          item: '스탠드 추가',
+          item: '스탠드폴 추가',
           price: '200,000'
         },
       ],
-      
+
       popup: {
         complete: false,
         installPlace: false,
@@ -285,11 +292,11 @@ export default {
     }
   },
   methods: {
-    addrConfirm(form){
+    addrConfirm(form) {
       this.form.addr = form.addr;
       this.form.addrdetail = form.addrdetail;
     },
-    calendarConfirm(day){
+    calendarConfirm(day) {
       this.visitDay = day;
     }
   }

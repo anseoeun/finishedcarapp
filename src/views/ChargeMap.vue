@@ -21,7 +21,10 @@
 
       <div class="map-menu top">
         <button><Icon type="map-pos" /></button>
-        <button><Icon type="map-index" /></button>
+        <button>
+          <span v-if="skin === 'bmw'" class="txt sm">현 지도에서<br>검색</span>
+          <Icon v-else type="map-index" />
+        </button>
       </div>
 
       <div class="map-menu bottom">
@@ -49,9 +52,18 @@
             </li>
           </ul>
         </div>
-        <button @click="infoMenuOpend = !infoMenuOpend"><Icon type="map-info" /></button>
-        <button @click="rightLayer.popFavorite = true"><Icon type="map-favorite" /></button>
-        <button @click="rightLayer.popMapFilter = true"><Icon type="map-filter" /></button>
+        <button @click="infoMenuOpend = !infoMenuOpend">
+          <Icon v-if="skin === 'benz'" type="map-info" />
+          <span v-else class="txt">범례</span>
+        </button>
+        <button @click="rightLayer.popFavorite = true">
+          <span v-if="skin === 'bmw'" class="txt">즐겨찾기</span>
+          <Icon v-else type="map-favorite" />
+        </button>
+        <button @click="rightLayer.popMapFilter = true">
+          <span v-if="skin === 'bmw'" class="txt">검색조건</span>
+          <i v-else class="i-map-filter"></i>
+        </button>
       </div>
 
     </div>
