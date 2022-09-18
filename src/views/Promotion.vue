@@ -65,7 +65,7 @@
         <li>
           <div class="label">회원가입</div>
           <div class="full">
-            <div class="apply-step"><object :data="require('@/assets/images/polestar/step-charge-benefits-apply-method.svg')" type="image/svg+xml" aria-label="충전혜택 신청방법"></object></div>
+            <div class="apply-step"><img :src="require('@/assets/images/polestar/step-charge-benefits-apply-method.svg')" alt="충전혜택 신청방법" /></div>
           </div>
         </li>
         <li>
