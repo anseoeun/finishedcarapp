@@ -57,3 +57,53 @@ body{font-family:"MBKCorpoA", "NotoSans", "Sans-serif";}
 
 
 @import 'style';
+
+
+/* ========================================
+  content
+=========================================== */
+
+/* smart-coaching-wrap */
+.smart-coaching-wrap .smart-coaching-visual{height:23.2rem;background-position:50% 50%;background-position:cover;background-size:100% auto;}
+.smart-coaching-wrap .smart-coaching-cont{padding:2.4rem 4rem;}
+.smart-coaching-wrap .smart-coaching-cont .menu-list-type1{margin-top:3.2rem;}
+
+/* smart-coaching-service-wrap */
+.smart-coaching-service-wrap{padding:2.4rem 4rem;}
+.smart-coaching-service-list{margin-top:3.2rem;}
+.smart-coaching-service-list > li{position:relative;}
+.smart-coaching-service-list > li ~ li{margin-top:1.03rem;}
+.smart-coaching-service-list > li ~ li:before{content:'';display:block;position:absolute;top:-1.8rem;left:50%;width:2.4rem;height:2.4rem;background:#009FE3 url("data:image/svg+xml,%3Csvg width='13' height='8' viewBox='0 0 13 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.62158 1.89185L6.16212 6.43239L11.027 1.89185' stroke='white' stroke-width='2.27027' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat 50% 0.8rem;background-size:4.5rem 0.9rem;border-radius:2.4rem;transform:translateX(-50%);-webkit-transform:translateX(-50%);}
+.smart-coaching-service-list .box {padding:1.38rem;height:16.5rem;border: 1px solid #959595;border-radius: 0.8rem;background:#fff;display:flex;align-items:stretch;}
+.smart-coaching-service-list .box > *{width:11.5rem;display:flex;flex-direction: column;justify-content:center;align-items:center;}
+.smart-coaching-service-list .box > .desc{flex:1;margin-left:1.3rem;}
+.smart-coaching-service-list .box .title .num {font-weight:700;font-size:1.2rem;color:#3B86C0;}
+.smart-coaching-service-list .box .title .tit {margin-top:0.8rem;font-weight:700;font-size:1.6rem;color:#000;}
+.smart-coaching-service-list .box .desc .img object{display:block;}
+.smart-coaching-service-list .step1 .box .desc .img object:first-child{width:4.49rem;}
+.smart-coaching-service-list .step1 .box .desc .img object:last-child{width:6.16rem;margin-top:1.3rem;}
+.smart-coaching-service-list .step1 .box .desc p {font-size:1rem;color:#000;margin-top:1.3rem;}
+.smart-coaching-service-list .step2 .box {flex-direction: row-reverse;}
+.smart-coaching-service-list .step2 .box .desc{margin-left:0;margin-right:1.3rem;}
+.smart-coaching-service-list .step2 .box .desc .img object {width:10.4rem;}
+.smart-coaching-service-list .step2 .box .desc ul {margin-top:1.44rem;}
+.smart-coaching-service-list .step2 .box .desc ul li{height:2.3rem;width:10rem;display:flex;;justify-content:center;align-items:center;border-radius:2.3rem;color:#fff;font-weight:700;font-size:1.2rem;}
+.smart-coaching-service-list .step2 .box .desc ul li:first-child{background:#4d4d4d;}
+.smart-coaching-service-list .step2 .box .desc ul li:last-child{background:#3b86c0;}
+.smart-coaching-service-list .step2 .box .desc ul li ~ li{margin-top:1.3rem;}
+.smart-coaching-service-list .step3 .box .desc .img object {width:10.4rem;}
+.smart-coaching-service-list .step3 .box .desc strong {font-weight:700;font-size:1.28rem;}
+.smart-coaching-service-list .step3 .box .desc ul {margin-top:1.3rem;}
+.smart-coaching-service-list .step3 .box .desc ul li {font-size:0.9rem;color:#959595;font-weight:700;text-indent:-0.6rem;padding-left:0.6rem;letter-spacing: -0.03em;}
+
+.smart-coaching-service-progress li {position:relative;font-size:1.2rem;color:#4D4D4D;}
+.smart-coaching-service-progress li{padding-top:2.3rem;}
+.smart-coaching-service-progress li:before{content:'';display:block;position:absolute;top:1rem;left:50%;width:0.5rem;height:0.3rem;background:url("data:image/svg+xml,%3Csvg width='6' height='3' viewBox='0 0 6 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.25 0L2.75 3L0.25 0H5.25Z' fill='%234D4D4D'/%3E%3C/svg%3E%0A") no-repeat 0 0;background-size:auto 100%;transform:translateX(-50%);-webkit-transform:translateX(-50%);}
+.smart-coaching-service-progress > li:first-child{padding-top:0;}
+.smart-coaching-service-progress > li:first-child:before{display:none;}
+.smart-coaching-service-progress > li .box {display:flex;justify-content:center;align-items:center;min-height:3.2rem;border: 1px solid #959595;  border-radius: 0.8rem;background:#fff;}
+.smart-coaching-service-progress > li .txt {text-align: right;margin-top:0.4rem;}
+.smart-coaching-service-progress > li .f-wrap{align-items: flex-start;}
+.smart-coaching-service-progress > li .f-wrap ol{flex:1;}
+.smart-coaching-service-progress > li .f-wrap ol ~ ol{margin-left:4.8rem;}
+.smart-coaching-service-progress > li ol .combine2 .box {height:8.7rem;}

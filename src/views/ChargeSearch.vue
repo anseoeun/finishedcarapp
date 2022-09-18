@@ -8,7 +8,7 @@
       <ul class="station-list">
         <li v-for="(item, index) in stationList" :key="index">
           <router-link to="/" class="charge-station st2">
-            <button class="btn-favorite" @click="item.favorite = !item.favorite"><Icon type="favorite-s" :class="{on: item.favorite}" /></button>
+            <button class="btn-favorite" @click.prevent="item.favorite = !item.favorite"><Icon type="favorite-s" :class="{on: item.favorite}" /></button>
             <strong class="tit">{{ item.tit }}</strong>
             <div class="addr">
               <p>{{ item.addr }}</p>

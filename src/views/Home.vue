@@ -38,6 +38,17 @@
           </template>
         </tr>
       </template>
+      <template v-if="skin === 'benz'">
+        <tr v-for="(value, name, index) in benzList" :key="value">
+          <td v-if="name.includes('title-')" colspan="4" class="title">{{ value }}</td>
+          <template v-else>
+            <td>{{ index + titleNum }}</td>
+            <td>{{ value }}</td>
+            <td><router-link :to="'/'+name">{{ '/'+name }}</router-link></td>
+            <td></td>
+          </template>
+        </tr>
+      </template>
       <template v-if="skin === 'polestar'">
         <tr v-for="(value, name, index) in polestarList" :key="value">
           <td v-if="name.includes('title-')" colspan="4" class="title">{{ value }}</td>
@@ -141,9 +152,23 @@ export default {
           //쿠폰보관함
           'couponBox': '쿠폰보관함',
       },
+      benzList: {
+          // 벤츠
+          'title-polestar': '-BENZ',
+          // 스마트코칭
+          'smartCoaching': '스마트코칭',
+          // 스마트코칭 서비스
+          'smartCoachingService': '스마트코칭 서비스',
+          // 스마트코칭 서비스 진행
+          'smartCoachingServiceProgress': '스마트코칭 서비스 진행',
+      },
       polestarList: {
           // 폴스타
           'title-polestar': '-POLESTAR',
+          // 안내
+          'guide': '안내',
+          // 프로모션
+          'promotion': '프로모션',
           // 이벤트
           'event': '이벤트',
       }

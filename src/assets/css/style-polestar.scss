@@ -42,3 +42,54 @@ $arr-bg-sm: "data:image/svg+xml,%3Csvg width='11' height='10' viewBox='0 0 11 10
 body{font-family:"PolestarUnica77TT", "Sans-serif";}
 
 @import 'style';
+
+
+/* ========================================
+  content
+=========================================== */
+
+/* guide-wrap */
+.guide-wrap .guide-visual{height:23.2rem;background-position:50% 50%;background-position:cover;background-size:100% auto;}
+.guide-wrap .guide-cont{padding:2.4rem 4rem 4rem;}
+.guide-wrap .guide-cont .menu-list-type1{margin-top:3.2rem;}
+
+/* promotion-wrap */
+.promotion-wrap{padding:1.25rem 1.66rem;}
+.promotion-wrap .tit-promotion{font-size:1.3rem;margin:1.25rem 0;color:#000;}
+.promotion-wrap .tit-promotion.line{padding-bottom:0.4rem;border-bottom:1px solid #53565a;}
+.promotion-wrap .promotion-visual{height:19.2rem;background-position:50% 50%;background-position:cover;background-size:100% auto;}
+.promotion-wrap .f-list{color:#53565A;font-size:0.78rem;}
+.promotion-wrap .f-list.label-fix1 .label{width:8.3rem;}
+.promotion-wrap .f-list.label-fix2 .label{width:5rem;}
+.promotion-wrap .f-list .auto{letter-spacing: -0.05em;}
+.promotion-wrap .apply-step{margin-top:1.25rem;}
+.promotion-wrap .apply-step svg{width:100%;}
+.promotion-wrap .charge-benefits{margin-top:1.25rem;}
+.promotion-wrap .f-wrap{font-size: 0.78rem;}
+.promotion-wrap .f-wrap .img{width:9.7rem;display:flex;flex-direction: column;justify-content:center;align-items:center;}
+.promotion-wrap .f-wrap .tit{display:block;color:#000;margin-bottom:1.25rem;text-align:center;}
+.promotion-wrap .logo-list li{display:inline-block;margin-right:1.2rem;}
+.promotion-wrap .logo-list li:last-child{margin-right:0;}
+.promotion-wrap .logo-list li img{height:0.78rem;}
+
+/* charge-benefits */
+.charge-benefits{display:flex;align-items:center;}
+.charge-benefits .benefit{flex:1;height:15.6rem;box-shadow: 0.4rem 0.4rem 0.8rem #E5E5E5;border-radius: 0.8rem;text-align:center;}
+.charge-benefits .benefit ~ .benefit{margin-left:2.9rem;}
+.charge-benefits .benefit .text{padding-top:1.25rem;}
+.charge-benefits .benefit .text strong{font-size:1.1rem;font-weight:700;}
+.charge-benefits .benefit .text p{margin-top:0.5rem;font-size:0.78rem;}
+.charge-benefits .benefit .text em{color:$c-point;;}
+.charge-benefits .benefit .img{margin-top:2rem;}
+
+/* charge-program-guide (pop) */
+.charge-program-guide .benefits{padding:0 0.8rem;border-bottom:1px solid #53565a;padding-bottom:1.6rem;}
+.charge-program-guide .benefits ~ .benefits{margin-top:2.4rem;}
+.charge-program-guide .benefits .tit{font-size:1rem;letter-spacing: -0.06em;}
+.charge-program-guide .benefits .charge-benefits{margin-top:0.8rem;}
+.charge-program-guide .benefits .charge-benefits .benefit ~ .benefit{margin-left:1.6rem;}
+.charge-program-guide .benefits .agree{margin-top:1.6rem;text-align: right;}
+.charge-program-guide .all-agree-check{margin-top:1.6rem;}
+.charge-program-guide .all-agree-check strong{display:block;font-size:1.2rem;color:#E03C31;text-align:center;letter-spacing: -0.06em;}
+.charge-program-guide .all-agree-check .input-name{margin-top:1rem;text-align:center;}
+.charge-program-guide .all-agree-check .input-name input{height:3.4rem;width:15rem;text-align:center;border-color:#ecece7;letter-spacing: -0.06em;}

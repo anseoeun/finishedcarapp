@@ -128,7 +128,8 @@
             <div class="line"></div>
             <div class="check">
               <label class="inp-check st2">
-                <input type="checkbox">
+                <button class="btn-hidden" @click.stop="btmLayer.popChargeProgramGuide=true"></button>
+                <input type="checkbox" v-model="form.chargeProgram">
                 <span class="ic"></span>
                 <span class="t">폴스타 충전 프로그램 동의</span>
               </label>
@@ -199,17 +200,20 @@
     <PopAddr :visible="popup.popAddr" @confirm="addrConfirm" @close="popup.popAddr=false"/>
     <!-- 팝업:신용카드 등록 -->
     <PopCardRegist :visible="popup.popCardRegist" @close="popup.popCardRegist=false"/>
-    
-  </div>
+    <!-- 폴스타 충전프로그램 안내사항 -->
+    <PopChargeProgramGuide :visible="btmLayer.popChargeProgramGuide" @confirm="chargeProgrmConfirm" @close="btmLayer.popChargeProgramGuide=false" />
+  </div> 
 </template>
 
 <script>
 import PopAddr from '@/views/PopAddr'
 import PopCardRegist from '@/views/PopCardRegist'
+import PopChargeProgramGuide from '@/views/PopChargeProgramGuide'
 export default {
   components:{
     PopAddr,
     PopCardRegist,
+    PopChargeProgramGuide
   },  
   data(){
     return{
@@ -219,7 +223,8 @@ export default {
         pwcheck: '',
         addr: '',
         addrdetail: '',
-        memcard: ''
+        memcard: '',
+        chargeProgram: false,
       },
       supportProgram: '',
       supportProgromList: [
@@ -244,6 +249,9 @@ export default {
         complete:false,
         popAddr: false,
         popCardRegist:false,
+      },
+      btmLayer:{
+        popChargeProgramGuide: false,
       }
     }
   },
@@ -254,7 +262,10 @@ export default {
     addrConfirm(form){
       this.form.addr = form.addr;
       this.form.addrdetail = form.addrdetail;
-    }
+    },
+    chargeProgrmConfirm(val){
+      this.form.chargeProgram = val;
+    },
   }
 }
 </script>

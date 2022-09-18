@@ -55,3 +55,52 @@ $arr-bg-sm: "data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' 
 body{font-family:"BMWHelvetica", "NotoSans", "Sans-serif";}
 
 @import 'style';
+
+
+/* ========================================
+  content
+=========================================== */
+
+/* coupon-wrap */
+.coupon-wrap{padding:2.4rem 4rem;}
+.coupon-wrap .tit-wrap + .tit-coupon{margin-top:3.6rem;}
+.coupon-wrap .tit-wrap ~ .tit-wrap{margin-top:3.5rem;}
+.coupon-wrap .tit-coupon span{display:inline-block;padding:0 0.4rem 0.4rem;font-size:1.2rem;border-bottom:1px solid #111F42; color:#111F42;}
+.coupon-wrap .point-wrap{display:flex;align-items:center;color:#111F42;font-size:1rem;margin-top:1rem;}
+.coupon-wrap .point-wrap .labels {margin-right:0.8rem;}
+.coupon-wrap .point-wrap .labels li ~ li{margin-top:0.5rem;}
+.coupon-wrap .point-wrap .points {flex:1;padding:0.2rem 0.8rem;border:1px solid #111F42;border-radius:0.8rem;min-height:3.4rem;}
+.coupon-wrap .point-wrap .points .no-coupon{height:2.8rem;display:flex;flex-direction: column;justify-content:center;align-items:center; color:#111F42;font-weight:700;}
+.coupon-wrap .point-wrap .points ul {display:table;width:100%;}
+.coupon-wrap .point-wrap .points ul li{display:table-row;}
+.coupon-wrap .point-wrap .points ul li > *{display:table-cell;vertical-align: middle; }
+.coupon-wrap .point-wrap .points ul li ~ li > *{padding-top:0.4rem;}
+.coupon-wrap .point-wrap .points ul li .point {width:1rem;white-space: nowrap;}
+.coupon-wrap .point-wrap .points ul li .point b {font-weight:700;}
+.coupon-wrap .point-wrap .points ul li .gage {height:1.2rem;padding-left:0.5rem;}
+.coupon-wrap .point-wrap .points ul li .gage b {float:left;background:#2A64AB;height:100%;border-radius:0.4rem;}
+.coupon-wrap .coupon-list{margin-top:0.8rem;}
+.coupon-wrap .coupon-list ul li img{width:100%;}
+.coupon-wrap .coupon-list ul li ~ li{margin-top:0.8rem;}
+.coupon-wrap .coupon-list ul li .box{position:relative;display:flex;align-items:stretch;border: 1px solid #7E859A;border-radius: 0.8rem;overflow:hidden;font-size:1rem;background:#fff;}
+.coupon-wrap .coupon-list ul li .box .end-txt{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center; color:#fff;background:rgba(0,0,0,0.56);font-weight:700;z-index: 10;}
+.coupon-wrap .coupon-list ul li .box .desc-wrap{flex:1;display:flex;align-items:center;padding:1.6rem;}
+.coupon-wrap .coupon-list ul li .box .desc-wrap .icon{display:block;width:4rem;height:100%;display:flex;flex-direction: column;justify-content:center;align-items:center;}
+.coupon-wrap .coupon-list ul li .box .desc-wrap .icon img{max-width: 100%;}
+.coupon-wrap .coupon-list ul li .box .desc-wrap .desc{margin-left:2.6rem;text-align:left;}
+.coupon-wrap .coupon-list ul li .box .desc-wrap .desc .tit{display:block;color:#000;}
+.coupon-wrap .coupon-list ul li .box .desc-wrap .desc .date{display:block;margin-top:0.8rem;}
+.coupon-wrap .coupon-list ul li .box .cancel{width:5.1rem;color:#fff;background:#2A64AB;}
+.coupon-wrap .coupon-list ul li .box .cancel button{width:100%;height:100%;}
+.coupon-wrap .no-data{height:calc(100vh - 28rem) !important;font-size:1.2rem; color:#000;}
+.coupon-wrap .tab-coupon{margin-top:3.6rem;}
+.coupon-wrap .tab-coupon > * ~ *{margin-left:0.8rem;}
+.coupon-wrap .tab-coupon > *:not(.on) .tit-coupon span{ color:$c-base;border-color: #7E859A;}
+.coupon-wrap .tab-coupon + .coupon-list{margin-top:3.2rem;}
+
+/* coupon-detail(pop) */
+.coupon-detail .barcode{display:flex;flex-direction: column;justify-content:center;align-items:center;padding:1rem;background:#E7E7E7;}
+.coupon-detail .coupon-desc{margin-top:1.6rem;border-radius:0.8rem;padding:2.4rem;color:#fff;font-size:1.2rem;background:#2A64AB;}
+.coupon-detail .coupon-desc * + .desc{margin-top:2rem;}
+.coupon-detail .coupon-desc img{width:100%;}
+.coupon-detail .coupon-desc pre{white-space: pre-line;}

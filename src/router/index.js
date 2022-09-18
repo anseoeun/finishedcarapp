@@ -1,3 +1,4 @@
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
@@ -72,8 +73,18 @@ const routes = [
   // 쿠폰보관함
   { path: '/couponBox', meta: { layout: 'Sub', footer: true, title: '쿠폰보관함', menu: 'coupon' }, component: () => import('@/views/CouponBox.vue')},
 
+  //benz ----------
+  // 스마트코칭
+  { path: '/smartCoaching', meta: { layout: 'Default', menu: 'smart' }, component: () => import('@/views/SmartCoaching.vue')},  
+  { path: '/smartCoachingService', meta: { layout: 'Sub', footer: true, title: 'Smart Coaching', menu: 'smart' }, component: () => import('@/views/SmartCoachingService.vue')},  
+  { path: '/smartCoachingServiceProgress', meta: { layout: 'Sub', footer: true, title: 'Smart Coaching', menu: 'smart' }, component: () => import('@/views/SmartCoachingServiceProgress.vue')},  
 
   //polestar ----------
+  // 안내
+  { path: '/guide', meta: { layout: 'Default', menu: 'guide' }, component: () => import('@/views/Guide.vue')},  
+  // 프로모션
+  { path: '/promotion', meta: { layout: 'Sub', footer: true, title: '프로모션', menu: 'guide' }, component: () => import('@/views/Promotion.vue')},  
+  // 이벤트
   { path: '/event', meta: { layout: 'Sub', footer: true, title: '이벤트', menu: 'cscenter' }, component: () => import('@/views/Event.vue')},  
 ]
 

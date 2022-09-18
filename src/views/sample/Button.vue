@@ -10,6 +10,9 @@
     <button class="btn-type3 st2"><span>btn-type3 st2</span></button>
     <button class="btn-type4 st1"><span>btn-type4 st1</span></button>
     <button class="btn-type4 st2"><span>btn-type4 st2</span></button>
+    <br>
+    <button class="btn-type5 st1"><span>btn-type5 st1</span></button>
+    <button class="btn-type5 st2"><span>btn-type5 st2</span></button>
     <button class="btn-type1 st1" disabled><span>st1 disabled</span></button>
     <button class="btn-type1 st2" disabled><span>st2 disabled</span></button>
     <button class="btn-type1 st1 disabled-st1" disabled><span>disabled-st1</span></button>
